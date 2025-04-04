@@ -7,9 +7,6 @@ export default function Home() {
         <>
             <Header />
             <HeroBanner />
-            <div>
-                <p>text</p>
-            </div>
         </>
     );
 }

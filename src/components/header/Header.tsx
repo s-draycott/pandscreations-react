@@ -10,6 +10,12 @@ const Header = () => {
     const isHomePage =
         location.pathname === "/" || location.pathname === "/home";
 
+    //Handle mobile menu
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const toggleMobileMenu = () => {
+        setIsMobileMenuOpen((prev) => !prev);
+    };
+
     // Scroll Handler
     const [isScrolled, setIsScrolled] = useState(false);
     const handleScroll = () => {
@@ -38,6 +44,12 @@ const Header = () => {
             }`}
         >
             <div className={styles.navContainer}>
+                <button
+                    className={styles.hamburgerIcon}
+                    onClick={toggleMobileMenu}
+                >
+                    &#9776;
+                </button>
                 <a href="/home">
                     <img
                         id={styles.logoImg}
@@ -45,20 +57,32 @@ const Header = () => {
                         alt="P&S Creations logo"
                     ></img>
                 </a>
-                <div className={styles.navMenu}>
-                    <a className={styles.navBtn} href="/about">
-                        ABOUT
-                    </a>
-                    <a className={styles.navBtn} href="/gallery">
-                        GALLERY
-                    </a>
-                    <a className={styles.navBtn} href="/products">
-                        PRODUCTS
-                    </a>
-                    <a className={styles.navBtn} href="/contact">
-                        CONTACT
-                    </a>
-                </div>
+                <ul
+                    className={`${styles.navMenu} ${
+                        isMobileMenuOpen ? styles.open : ""
+                    }`}
+                >
+                    <li>
+                        <a className={styles.navBtn} href="/about">
+                            ABOUT
+                        </a>
+                    </li>
+                    <li>
+                        <a className={styles.navBtn} href="/gallery">
+                            GALLERY
+                        </a>
+                    </li>
+                    <li>
+                        <a className={styles.navBtn} href="/products">
+                            PRODUCTS
+                        </a>
+                    </li>
+                    <li>
+                        <a className={styles.navBtn} href="/contact">
+                            CONTACT
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     );

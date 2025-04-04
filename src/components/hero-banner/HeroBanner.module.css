@@ -1,27 +1,52 @@
 .heroContainer {
   position: absolute;
   top: 0px;
-  min-height: 100vh;
   width: 100%;
+  height: 900px;
   background-image: url(../../assets/home-background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  z-index: -1;
+}
+@media (max-width: 768px) {
+  .heroContainer {
+    position: relative;
+    width: 100%;
+    height: 400px;
+  }
 }
 
 .heroTextContainer {
   display: flex;
   flex-direction: column;
-  align-items: end;
+  align-items: start;
   position: absolute;
-  top: 20%;
-  right: 5%;
+  top: 30%;
+  left: 5%;
+  z-index: 1;
+}
+@media (max-width: 768px) {
+  .heroTextContainer {
+    position: relative;
+    left: 0;
+    top: 400px;
+    align-items: center;
+    padding: 20px;
+  }
 }
 
 .heroPara {
   color: white;
   font-family: "Cormorant", serif;
   font-size: 48px;
-  text-align: right;
+  text-align: left;
+}
+@media (max-width: 768px) {
+  .heroPara {
+    font-size: 28px;
+    color: rgb(75, 55, 40);
+    text-align: center;
+  }
 }
 
 .heroBtn {
@@ -37,5 +62,5 @@
   transition: 0.3s ease-in-out;
 }
 .heroBtn:hover {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }/*# sourceMappingURL=HeroBanner.module.css.map */
