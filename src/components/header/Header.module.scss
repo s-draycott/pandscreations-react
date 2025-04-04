@@ -8,7 +8,27 @@
     background-color: $brownColor;
     height: 20%;
     width: 100%;
+    z-index: 1;
+    transition: 0.3s ease-in-out;
+
+    &.homePage {
+        background-color: $brownColorTranslucent;
+    }
+
+    &.homePage:hover {
+        background-color: $brownColor;
+    }
+
+    &.scrolled {
+        background-color: $brownColor;
+    }
+
+    &.scrolled:hover {
+        background-color: $brownColor;
+    }
+
 }
+
 
 .navContainer {
     display: grid;
@@ -31,12 +51,29 @@
     font-family: $headingFont;
     font-weight: 500;
     font-size: larger;
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        left: 50%;
+        width: 0;
+        height: 3px;
+        border-radius: 10px;
+        background-color: $whiteColor;
+        transition: width 0.3s ease-in-out,
+            left 0.3s ease-in-out;
+        transform: translateX(-50%);
+    }
+    
 
     &:hover {
-        text-decoration: underline;
+        &::after {
+            width: 100%;
+        }
     }
 }
-
 
 #logoImg {
     width: 200px;

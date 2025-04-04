@@ -1,0 +1,41 @@
+.heroContainer {
+  position: absolute;
+  top: 0px;
+  min-height: 100vh;
+  width: 100%;
+  background-image: url(../../assets/home-background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.heroTextContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  position: absolute;
+  top: 20%;
+  right: 5%;
+}
+
+.heroPara {
+  color: white;
+  font-family: "Cormorant", serif;
+  font-size: 48px;
+  text-align: right;
+}
+
+.heroBtn {
+  font-family: "Cormorant", serif;
+  font-weight: 700;
+  letter-spacing: 5px;
+  color: white;
+  background-color: rgb(75, 55, 40);
+  border-radius: 60px;
+  padding: 10px 20px 10px 20px;
+  box-shadow: none;
+  border: none;
+  transition: 0.3s ease-in-out;
+}
+.heroBtn:hover {
+  transform: scale(1.05);
+}/*# sourceMappingURL=HeroBanner.module.css.map */
