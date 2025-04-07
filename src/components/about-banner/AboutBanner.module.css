@@ -1,0 +1,19 @@
+.aboutContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  padding: 20px;
+  background-color: rgba(180, 119, 72, 0.425);
+}
+
+.aboutHeading {
+  font-family: "Cormorant", serif;
+  font-size: 28px;
+  text-align: center;
+  padding: 20px;
+}
+
+.aboutImg {
+  height: 500px;
+}/*# sourceMappingURL=AboutBanner.module.css.map */

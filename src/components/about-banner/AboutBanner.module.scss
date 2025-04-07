@@ -1,0 +1,19 @@
+@import "../../stylesheets/Variables.scss";
+
+.aboutContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: $brownColorLight;
+}
+.aboutHeading {
+    font-family: $headingFont;
+    font-size: 28px;
+    text-align: center;
+    padding: 20px;
+}
+.aboutImg {
+    height: 500px;
+}

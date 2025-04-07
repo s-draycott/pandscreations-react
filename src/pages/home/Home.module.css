@@ -1,1 +1,8 @@
-/*# sourceMappingURL=Home.module.css.map */
+section {
+  padding-top: 100px;
+}
+@media (max-width: 768px) {
+  section {
+    padding-top: 200px;
+  }
+}/*# sourceMappingURL=Home.module.css.map */

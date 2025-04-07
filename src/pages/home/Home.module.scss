@@ -1,2 +1,9 @@
+@import "../../stylesheets/Variables.scss";
 
 
+section {
+    padding-top: 100px;
+    @media (max-width: $tablet) {
+        padding-top: 200px;
+    }
+}
