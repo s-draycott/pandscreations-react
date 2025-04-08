@@ -29,7 +29,6 @@
 
 .slide {
     position: absolute;
-    border-radius: 0.8rem;
     box-shadow: 0px 0px 7px grey;
     width: 100%;
     height: 100%;
@@ -75,10 +74,10 @@
 }
 
 .indicatorBtn {
-    background-color: rgba($color: #ffffff, $alpha: 0.5);
-    height: 0.5rem;
-    width: 3rem;
-    border-radius: 0.25rem;
+    background-color: rgba($color: #ffffff, $alpha: 0.9);
+    height: 0.7rem;
+    width: 0.7rem;
+    border-radius: 100%;
     border: none;
     box-shadow: 0px 0px 5px grey;
     margin: 0 0.2rem;
@@ -88,5 +87,9 @@
     &:hover {
         background-color: white;
     }
+}
+
+.indicatorBtnInactive {
+    background-color: rgba($color: #ffffff, $alpha: 0.3);
 }
 

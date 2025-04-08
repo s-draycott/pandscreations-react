@@ -48,7 +48,7 @@
   display: flex;
   align-items: center;
   margin: 0px;
-  padding: 10px;
+  padding: 5px;
   gap: 100px;
   list-style: none;
   transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.3s ease;
@@ -80,7 +80,7 @@
   font-family: "Cormorant", serif;
   font-weight: 500;
   font-size: larger;
-  padding: 10px;
+  padding: 5px;
   position: relative;
   display: inline-block;
 }

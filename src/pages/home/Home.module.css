@@ -1,8 +1,10 @@
-section {
-  padding-top: 100px;
-}
-@media (max-width: 768px) {
-  section {
-    padding-top: 200px;
-  }
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+.productScroll {
+  height: 400px;
+  text-align: center;
+  font-family: "Cormorant", serif;
+  font-size: 3rem;
+  padding: 20px;
+  color: rgb(75, 55, 40);
+  letter-spacing: 10px;
 }/*# sourceMappingURL=Home.module.css.map */

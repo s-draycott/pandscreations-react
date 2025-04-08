@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"About.module.css"}
+{"version":3,"sources":["../../stylesheets/Variables.scss","About.module.scss","About.module.css"],"names":[],"mappings":"AAAQ,yFAAA;ACER;EACI,UAAA;EACA,YAAA;EACA,aAAA;ACAJ;;ADIA;EACI,WAAA;EACA,wBAAA;ACDJ;;ADIA;EACI,WAAA;EACA,mBAAA;ACDJ;;ADMA;EACI,kCDJO;ECKP,cAAA;ACHJ","file":"About.module.css"}

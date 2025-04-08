@@ -1,1 +1,21 @@
-/*# sourceMappingURL=About.module.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+.aboutContainer {
+  width: 70%;
+  margin: auto;
+  padding: 20px;
+}
+
+.carouselContainer {
+  float: left;
+  margin: 0 20px 10px 50px;
+}
+
+.textContainer {
+  width: auto;
+  text-align: justify;
+}
+
+.aboutText {
+  font-family: "Raleway", sans-serif;
+  line-height: 2;
+}/*# sourceMappingURL=About.module.css.map */

@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
 //Responsive
 $mobile: 600px;
 $tablet:768px;
+$desktop: 1024px;
 
 //Colors
 $brownColor: rgb(75, 55, 40);
@@ -13,4 +16,6 @@ $whiteColorTranslucent: rgba(255,255,255,0.35);
 //Fonts
 $headingFont: "Cormorant",
 serif;
-$paraFont: "Inter", sans-serif;
+$paraFont: "Raleway",
+sans-serif;
+

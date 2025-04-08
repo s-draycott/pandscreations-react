@@ -1,19 +1,59 @@
 @import "../../stylesheets/Variables.scss";
 
 .aboutContainer{
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
-    margin-top: 50px;
-    padding: 20px;
+    padding: 50px;
     background-color: $brownColorLight;
+    gap: 20px;
+
+    @media (max-width: $tablet) {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        padding: 10px;
+    }
+
+}
+
+.imgContainer {
+    display: flex;
+    justify-content: end;
+}
+
+.textContainer{
+    background-color: white;
+    color: $brownColor;
+    padding: 40px;
+    width: auto;
+    margin-left: -120px;
+    z-index: 5;
+
+    @media(min-width: $desktop) {
+        width: 35vw;
+    }
+
+    @media (max-width: $tablet) {
+      margin: 0px;
+    }
 }
 .aboutHeading {
     font-family: $headingFont;
-    font-size: 28px;
-    text-align: center;
-    padding: 20px;
+    font-size: 2rem;
+    text-align: left;
+
 }
+
+.aboutPara{
+    text-align: left;
+    padding: 10px;
+    font-family: $paraFont;
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
 .aboutImg {
-    height: 500px;
+    height: 35rem;
+    margin-left: 50px;
 }

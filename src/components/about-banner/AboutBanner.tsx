@@ -1,20 +1,28 @@
 import styles from "./AboutBanner.module.css";
-import ImgCarousel from "../img-carousel/ImgCarousel";
-import { slides } from "../../data/AboutCarouselData.json";
+import aboutImg from "../../assets/graduation.jpg";
 
 const AboutBanner = () => {
     return (
         <>
             <div className={styles.aboutContainer}>
-                <ImgCarousel data={slides} />
-                <p className={styles.aboutHeading}>About P&S Creations</p>
-                <p className={styles.aboutPara}>
-                    My goal is to offer you an escape to the tranquil Yorkshire
-                    Dales through my artwork. With dedication to my craft and a
-                    deep commitment to authenticity, I strive to create timeless
-                    pieces that not only adorn your walls but also bring the
-                    serene beauty of nature into your everyday life.
-                </p>
+                <div className={styles.imgContainer}>
+                    <img className={styles.aboutImg} src={aboutImg}></img>
+                </div>
+                <div className={styles.textContainer}>
+                    <p className={styles.aboutHeading}>About P&S Creations</p>
+                    <p className={styles.aboutPara}>
+                        At P&S Creations, father-daughter duo Pete and Sally
+                        join forces to craft high-quality, handmade wooden
+                        products with a personal touch. Our mission is to create
+                        bespoke pieces that tell a story and reflect the beauty
+                        of nature. Wherever possible, we source wood directly
+                        from our family farm, milling timber from trees that
+                        have naturally fallen onsite. This commitment to
+                        sustainability ensures that every creation not only has
+                        its own unique charm but also honours the natural world
+                        from which it was made and inspired by.
+                    </p>
+                </div>
             </div>
         </>
     );

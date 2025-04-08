@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Img-Carousel.module.css";
 import {
     IoIosArrowDropleftCircle,
@@ -24,6 +24,13 @@ const ImgCarousel: React.FC<ImgCarouselProps> = ({ data }) => {
     const prevSlide = () => {
         setSlide((prevSlide) => (prevSlide - 1 + data.length) % data.length); // Loop back to last slide
     };
+
+    useEffect(() => {
+        const intervalId = setInterval(nextSlide, 10000);
+        return () => {
+            clearInterval(intervalId);
+        };
+    }, [data.length]);
 
     return (
         <div className={styles.carousel}>
@@ -58,7 +65,10 @@ const ImgCarousel: React.FC<ImgCarouselProps> = ({ data }) => {
                     return (
                         <button
                             key={i}
-                            className={styles.indicatorBtn}
+                            onClick={() => setSlide(i)}
+                            className={`${styles.indicatorBtn} ${
+                                i === slide ? "" : styles.indicatorBtnInactive
+                            }`}
                         ></button>
                     );
                 })}

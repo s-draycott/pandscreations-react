@@ -1,2 +1,25 @@
 @import "../../stylesheets/Variables.scss";
 
+.aboutContainer {
+    width: 70%;
+    margin: auto;
+    padding: 20px;
+
+}
+
+.carouselContainer {
+    float: left;
+    margin: 0 20px 10px 50px ;
+}
+
+.textContainer {
+    width: auto;
+    text-align: justify;
+}
+
+
+
+.aboutText{
+    font-family: $paraFont;
+    line-height: 2;
+}

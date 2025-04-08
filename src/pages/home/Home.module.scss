@@ -1,9 +1,13 @@
 @import "../../stylesheets/Variables.scss";
 
 
-section {
-    padding-top: 100px;
-    @media (max-width: $tablet) {
-        padding-top: 200px;
-    }
+.productScroll {
+    height: 400px;
+    text-align: center;
+    font-family: $headingFont;
+    font-size: 3rem;
+    padding: 20px;
+    color: $brownColor;
+    letter-spacing: 10px;
+
 }
