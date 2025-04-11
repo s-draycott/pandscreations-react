@@ -1,0 +1,55 @@
+{
+    "peteSallySlides": [
+        {
+            "src": "src/assets/sally-pete-planer.jpg",
+            "alt": "sally-pete-planer.jpg"
+        },
+        {
+            "src": "src/assets/sally-pete-young.jpg",
+            "alt": "sally-pete-young.jpg"
+        },
+        {
+            "src": "src/assets/sawmill.jpg",
+            "alt": "sawmill.jpg"
+        },
+        {
+            "src": "src/assets/sally-pete-wedding.jpg",
+            "alt": "sally-pete-wedding.jpg"
+        },
+        {
+            "src": "src/assets/pete-sally-plastering.jpg",
+            "alt": "pete-sally-plastering.jpg"
+        }
+    ],
+
+    "peteSolo": [
+        {
+            "src": "src/assets/pete-lana.jpg",
+            "alt": "pete-lana.jpg"
+        },
+        {
+            "src": "src/assets/pete-sawmill.jpg",
+            "alt": "pete-sawmill,jpg"
+        },
+        {
+            "src": "src/assets/pete-spraying.jpg",
+            "alt": "pete-spraying.jpg"
+        },
+        {
+            "src": "src/assets/pete-router.jpg",
+            "alt": "pete-router.jpg"
+        },
+        {
+            "src": "src/assets/pete-lana2.jpg",
+            "alt": "pete-lana2.jpg"
+        },
+        {
+            "src": "src/assets/pete-forklift.jpg",
+            "alt": "pete-forklift.jpg"
+        },
+        {
+            "src": "src/assets/pete-tractor.jpg",
+            "alt": "pete-tractor.jpg"
+        }
+    ]
+}

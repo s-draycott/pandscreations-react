@@ -20,7 +20,7 @@ const AboutBanner = () => {
                         have naturally fallen onsite. This commitment to
                         sustainability ensures that every creation not only has
                         its own unique charm but also honours the natural world
-                        from which it was made and inspired by.
+                        from which it was made and inspired.
                     </p>
                 </div>
             </div>

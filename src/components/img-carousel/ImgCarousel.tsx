@@ -34,12 +34,6 @@ const ImgCarousel: React.FC<ImgCarouselProps> = ({ data }) => {
 
     return (
         <div className={styles.carousel}>
-            <div
-                className={styles.carouselBlur}
-                style={{
-                    backgroundImage: `url(${data[slide].src})`, // Apply same background image to the blur div
-                }}
-            />
             <IoIosArrowDropleftCircle
                 className={`${styles.arrow} ${styles.arrowLeft}`}
                 onClick={prevSlide}

@@ -1,25 +1,74 @@
 @import "../../stylesheets/Variables.scss";
 
 .aboutContainer {
-    width: 70%;
-    margin: auto;
+    margin: 4% 10% 4% 10%;
     padding: 20px;
 
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    &.one {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
 }
 
-.carouselContainer {
-    float: left;
-    margin: 0 20px 10px 50px ;
+
+.carouselContainerOne {
+    // float: left;
+    margin: 0px 50px 20px 50px;
 }
 
-.textContainer {
-    width: auto;
-    text-align: justify;
+.carouselContainerTwo {
+    float: right;
+    margin: auto 50px auto 50px;
 }
 
-
-
-.aboutText{
+.aboutText {
     font-family: $paraFont;
+    font-size: 1.3rem;
     line-height: 2;
+    text-align: center;
+    margin: auto;
+
+}
+
+.aboutQuote {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: $headingFont;
+    font-size: clamp(1rem, 3vw, 4rem); // Responsive font sizing
+    font-weight: 400;
+    padding: 80px;
+    color: white;
+    background-color: rgba($color: rgb(39, 38, 38), $alpha: 0.3);
+    border-radius: 15px;
+    text-align: center;
+    width: auto; // Make width scale with container
+    max-width: 100rem;
+    z-index: 2;
+}
+
+.quoteMarks {
+    display: inline;
+    font-family: $quoteFont;
+}
+
+.planerImg {
+    width: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.quoteBanner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
 }

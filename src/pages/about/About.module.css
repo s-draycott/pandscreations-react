@@ -1,21 +1,69 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Palanquin&display=swap");
 .aboutContainer {
-  width: 70%;
-  margin: auto;
+  margin: 4% 10% 4% 10%;
   padding: 20px;
 }
-
-.carouselContainer {
-  float: left;
-  margin: 0 20px 10px 50px;
+.aboutContainer::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.aboutContainer.one {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.textContainer {
-  width: auto;
-  text-align: justify;
+.carouselContainerOne {
+  margin: 0px 50px 20px 50px;
+}
+
+.carouselContainerTwo {
+  float: right;
+  margin: auto 50px auto 50px;
 }
 
 .aboutText {
   font-family: "Raleway", sans-serif;
+  font-size: 1.3rem;
   line-height: 2;
+  text-align: center;
+  margin: auto;
+}
+
+.aboutQuote {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Cormorant", serif;
+  font-size: clamp(1rem, 3vw, 4rem);
+  font-weight: 400;
+  padding: 80px;
+  color: white;
+  background-color: rgba(39, 38, 38, 0.3);
+  border-radius: 15px;
+  text-align: center;
+  width: auto;
+  max-width: 100rem;
+  z-index: 2;
+}
+
+.quoteMarks {
+  display: inline;
+  font-family: "Palanquin", sans-serif;
+}
+
+.planerImg {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: 1;
+}
+
+.quoteBanner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
 }/*# sourceMappingURL=About.module.css.map */
