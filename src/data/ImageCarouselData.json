@@ -19,6 +19,10 @@
         {
             "src": "src/assets/pete-sally-plastering.jpg",
             "alt": "pete-sally-plastering.jpg"
+        },
+        {
+            "src": "src/assets/pete-sally-devon.jpg",
+            "alt": "pete-sally=devon.jpg"
         }
     ],
 
@@ -50,6 +54,21 @@
         {
             "src": "src/assets/pete-tractor.jpg",
             "alt": "pete-tractor.jpg"
+        }
+    ],
+
+    "sallySolo": [
+        {
+            "src": "src/assets/sally-dissection.jpg",
+            "alt": "sally-dissection.jpg"
+        },
+        {
+            "src": "src/assets/sally-lab.jpg",
+            "alt": "sally-lab.jpg"
+        },
+        {
+            "src": "src/assets/sally-conference.jpg",
+            "alt": "sally-conference.jpg"
         }
     ]
 }

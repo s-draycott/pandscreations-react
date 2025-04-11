@@ -55,7 +55,13 @@
   font-size: 1rem;
 }
 
-.aboutImg {
+.bannerImg {
   height: 35rem;
   margin-left: 50px;
+}
+
+.bannerVideo {
+  width: 500px;
+  cursor: pointer;
+  position: relative;
 }/*# sourceMappingURL=AboutBanner.module.css.map */

@@ -14,6 +14,14 @@
   align-items: center;
   justify-content: center;
 }
+.aboutContainer.three {
+  width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 100px 50px 100px;
+}
 
 .carouselContainerOne {
   margin: 0px 50px 20px 50px;
@@ -30,6 +38,9 @@
   line-height: 2;
   text-align: center;
   margin: auto;
+}
+.aboutText.sawmillText {
+  background-color: white;
 }
 
 .aboutQuote {

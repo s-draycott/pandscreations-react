@@ -3,25 +3,47 @@ import Header from "../../components/header/Header";
 import ImgCarousel from "../../components/img-carousel/ImgCarousel";
 import { peteSallySlides } from "../../data/ImageCarouselData.json";
 import { peteSolo } from "../../data/ImageCarouselData.json";
+import { sallySolo } from "../../data/ImageCarouselData.json";
 import styles from "./About.module.css";
 import bannerImg from "../../assets/planer-together.jpg";
+import sawmillVideo from "../../assets/sawmill-construction-video.mp4";
+import fallback from "../../assets/sawmill.jpg";
+import { useRef, useState } from "react";
+
+import aboutBannerImg from "../../assets/graduation.jpg";
 
 export default function About() {
+    const videoRef = useRef<HTMLVideoElement | null>(null);
+
     return (
         <>
             <Header />
-            <AboutBanner />
+            <AboutBanner
+                mediaSrc={aboutBannerImg}
+                mediaType="image"
+                heading="About P&S Creations"
+                text="  At P&S Creations, father-daughter duo Pete and Sally
+                        join forces to craft high-quality, handmade wooden
+                        products with a personal touch. Our mission is to create
+                        bespoke pieces that tell a story and reflect the beauty
+                        of nature. Wherever possible, we source wood directly
+                        from our family farm, milling timber from trees that
+                        have naturally fallen onsite. This commitment to
+                        sustainability ensures that every creation not only has
+                        its own unique charm but also honours the natural world
+                        from which it was made and inspired."
+            />
             <div className={`${styles.aboutContainer} ${styles.one}`}>
                 <div className={styles.carouselContainerOne}>
                     <ImgCarousel data={peteSallySlides} />
                 </div>
                 <p className={styles.aboutText}>
-                    Hi! I’m Sally and one half of P&S Creations. Whilst I now
-                    run the day-to-day and handle much of the making, it is my
-                    dad, Pete, who has always been the guiding force behind our
-                    craftmanship. I have spent my whole life looking up to him
-                    hoping to carry forward a fraction of his creativity,
-                    ingenuity and skill.
+                    Thanks for taking the time to get to know us! I’m Sally and
+                    one half of P&S Creations. Whilst I now run the day-to-day
+                    and handle much of the making, it is my dad, Pete, who has
+                    always been the guiding force behind our craftmanship. I
+                    have spent my whole life looking up to him hoping to carry
+                    forward a fraction of his creativity, ingenuity and skill.
                 </p>
             </div>
 
@@ -70,17 +92,24 @@ export default function About() {
                     inspire everything we create at P&S Creations.
                 </p>
             </div>
-            <div className={styles.aboutContainer}>
-                <p className={styles.aboutText}>
-                    A perfect example of his craftmanship is our bandsaw mill
-                    that he made completely from scratch repurposing the motor
+            <AboutBanner
+                mediaSrc={sawmillVideo}
+                mediaType="video"
+                heading=""
+                text="A perfect example of his craftmanship is our bandsaw mill
+                    that he made completely from scratch, repurposing the motor
                     from an old grain dryer, gear box from a silage feeder and
                     the steel from old farm buildings and the remains of an
-                    artic lorry! Pete’s ability to reimagine and repurpose
+                    artic lorry! His ability to reimagine and repurpose
                     materials that others might discard is what truly sets him
                     apart, and it’s a mindset that we embrace in every piece we
-                    create.
-                </p>
+                    create."
+                poster={fallback}
+            />
+            <div className={`${styles.aboutContainer} ${styles.two}`}>
+                <div className={styles.carouselContainerTwo}>
+                    <ImgCarousel data={sallySolo} />
+                </div>
                 <p className={styles.aboutText}>
                     As for me, I’m a scientist by trade and have worked in
                     research for 10 years completing a PhD in molecular biology.
