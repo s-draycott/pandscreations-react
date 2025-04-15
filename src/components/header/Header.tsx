@@ -1,14 +1,15 @@
 // import React from "react";
-import { useLocation } from "react-router-dom";
-import React, { useEffect, useState } from "react";
-import styles from "./Header.module.css";
-import logo from "../../assets/white-transparent-03.svg";
+import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
+
+import logo from '../../assets/white-transparent-03.png';
+
+import styles from './Header.module.css';
 
 const Header = () => {
     //Location Handler
     const location = useLocation();
-    const isHomePage =
-        location.pathname === "/" || location.pathname === "/home";
+    const isHomePage = location.pathname === '/' || location.pathname === '/home';
 
     //Handle mobile menu
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -26,42 +27,27 @@ const Header = () => {
         }
     };
     useEffect(() => {
-        // Only add the scroll listener if we're on the Home page
-        if (location.pathname === "/" || location.pathname === "/home") {
-            window.addEventListener("scroll", handleScroll);
-        }
+        window.addEventListener('scroll', handleScroll);
 
-        // Clean up the scroll listener
         return () => {
-            window.removeEventListener("scroll", handleScroll);
+            window.removeEventListener('scroll', handleScroll);
         };
     }, [location]);
 
     return (
         <div
-            className={`${styles.navbar} ${isHomePage ? styles.homePage : ""} ${
-                isScrolled ? styles.scrolled : ""
+            className={`${styles.navbar} ${isHomePage ? styles.homePage : ''} ${
+                isScrolled ? styles.scrolled : ''
             }`}
         >
             <div className={styles.navContainer}>
-                <button
-                    className={styles.hamburgerIcon}
-                    onClick={toggleMobileMenu}
-                >
+                <button className={styles.hamburgerIcon} onClick={toggleMobileMenu}>
                     &#9776;
                 </button>
                 <a href="/home">
-                    <img
-                        id={styles.logoImg}
-                        src={logo}
-                        alt="P&S Creations logo"
-                    ></img>
+                    <img id={styles.logoImg} src={logo} alt="P&S Creations logo"></img>
                 </a>
-                <ul
-                    className={`${styles.navMenu} ${
-                        isMobileMenuOpen ? styles.open : ""
-                    }`}
-                >
+                <ul className={`${styles.navMenu} ${isMobileMenuOpen ? styles.open : ''}`}>
                     <li>
                         <a className={styles.navBtn} href="/about">
                             ABOUT

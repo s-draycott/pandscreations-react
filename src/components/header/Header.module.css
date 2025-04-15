@@ -9,7 +9,7 @@
   height: 20%;
   width: 100%;
   z-index: 10;
-  transition: 0.3s ease-in-out;
+  transition: background-color 0.5s ease, box-shadow 0.3s ease;
   flex-wrap: wrap;
 }
 @media (max-width: 768px) {
@@ -30,6 +30,7 @@
 }
 .navbar.scrolled {
   background-color: rgb(75, 55, 40);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
 }
 .navbar.scrolled:hover {
   background-color: rgb(75, 55, 40);
