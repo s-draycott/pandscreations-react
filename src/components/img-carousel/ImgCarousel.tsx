@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from "react";
-import styles from "./Img-Carousel.module.css";
-import {
-    IoIosArrowDropleftCircle,
-    IoIosArrowDroprightCircle,
-} from "react-icons/io";
+import React, { useEffect, useState } from 'react';
+import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from 'react-icons/io';
+
+import styles from './Img-Carousel.module.css';
 
 interface Slide {
     src: string;
@@ -61,7 +59,7 @@ const ImgCarousel: React.FC<ImgCarouselProps> = ({ data }) => {
                             key={i}
                             onClick={() => setSlide(i)}
                             className={`${styles.indicatorBtn} ${
-                                i === slide ? "" : styles.indicatorBtnInactive
+                                i === slide ? '' : styles.indicatorBtnInactive
                             }`}
                         ></button>
                     );

@@ -77,4 +77,52 @@
   position: relative;
   width: 100%;
   overflow: hidden;
+}
+
+@media (max-width: 600px) {
+  .aboutContainer.one,
+  .aboutContainer.two,
+  .aboutContainer.three {
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 0;
+    padding: 0px;
+  }
+  .carouselContainerOne,
+  .carouselContainerTwo {
+    margin: 0;
+    float: none;
+    width: 100%;
+  }
+  .aboutText {
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.8;
+    margin: 0 auto;
+    padding: 30px;
+  }
+  .aboutQuote {
+    position: static;
+    display: block;
+    width: 100%;
+    transform: none;
+    padding: 40px 20px;
+    font-size: 1.2rem;
+    background-color: rgb(226, 197, 174);
+    border-radius: 0px;
+    margin: 0px;
+  }
+  .planerImg {
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+  .quoteBanner {
+    margin: 0px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
 }/*# sourceMappingURL=About.module.css.map */

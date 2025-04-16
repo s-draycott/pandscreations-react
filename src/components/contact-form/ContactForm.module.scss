@@ -1,0 +1,62 @@
+@import "../../stylesheets/Variables.scss";
+
+.heading {
+    font-family: $headingFont;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+}
+
+.para {
+    font-family: $headingFont;
+    font-size: 1.2rem;
+    width: 50%;
+    text-align: center;
+    line-height: 2rem;
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: $whiteColor;
+    margin: 40px 0 40px 0;
+    padding: 40px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+                            
+.formInput {
+    width: 30rem;
+    border-radius: 2px;
+    padding: 10px;
+    border: none;
+    font-family: $paraFont;
+    box-shadow: 1px 1px 5px rgb(221, 215, 205);
+    border: 1px solid $brownColorLight;
+}
+
+.formBtn {
+    font-family: $headingFont;
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: $whiteColor;
+    background-color: $brownColor;
+    border-radius: 60px;
+    padding: 10px 20px 10px 20px;
+    box-shadow: none;
+    border: none;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+        transform: scale(1.08);
+    }
+}

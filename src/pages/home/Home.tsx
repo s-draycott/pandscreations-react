@@ -1,9 +1,12 @@
-import AboutBanner from "../../components/about-banner/AboutBanner";
-import Header from "../../components/header/Header";
-import Footer from "../../components/footer/Footer";
-import HeroBanner from "../../components/hero-banner/HeroBanner";
-import styles from "./Home.module.css";
-import aboutBannerImg from "../../assets/graduation.jpg";
+import aboutBannerImg from '../../assets/graduation.jpg';
+import AboutBanner from '../../components/about-banner/AboutBanner';
+import ContactForm from '../../components/contact-form/ContactForm';
+import Footer from '../../components/footer/Footer';
+import Header from '../../components/header/Header';
+import HeroBanner from '../../components/hero-banner/HeroBanner';
+
+import styles from './Home.module.css';
+
 export default function Home() {
     return (
         <>
@@ -25,8 +28,7 @@ export default function Home() {
                         its own unique charm but also honours the natural world
                         from which it was made and inspired."
             />
-            <div className={styles.holdingContainer}></div>
-
+            <ContactForm />
             <Footer />
         </>
     );
