@@ -1,0 +1,26 @@
+@import "../../stylesheets/Variables.scss";
+
+.mainContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.heading {
+    font-family: $headingFont;
+    font-size: 3rem;
+    letter-spacing: 0.4rem;
+    text-align: center;
+    margin: 40px auto 40px auto;
+}
+
+.productGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); // Responsive columns
+    gap: 15px; // Space between the product cards
+    padding: 10px; // Add some padding around the grid
+    justify-items: center; // Center the product cards horizontally
+    grid-auto-rows: auto;
+}

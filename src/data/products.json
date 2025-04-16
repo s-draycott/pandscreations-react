@@ -1,0 +1,88 @@
+[
+  {
+    "id": 1,
+    "title": "'Close The Gate' - Personalised Letter Rack",
+    "description": "Handmade oak letter rack with personalisation",
+    "price": 65.0,
+    "available": false,
+    "images": [
+      { "id": 1, "src": "src/assets/gate-letter-rack-01.png", "alt":"gate-letter-rack-01"},
+      { "id": 2, "src": "src/assets/gate-letter-rack-02.png", "alt": "gate-letter-rack-02" },
+      { "id": 3, "src": "src/assets/gate-letter-rack-03.png", "alt": "gate-letter-rack-03" },
+      { "id": 4, "src": "src/assets/gate-letter-rack-04.png", "alt": "gate-letter-rack-04" },
+      { "id": 5, "src": "src/assets/gate-letter-rack-05.png", "alt": "gate-letter-rack-05" },
+      { "id": 6, "src": "src/assets/gate-letter-rack-06.png", "alt": "gate-letter-rack-06" }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Walnut Dining Table",
+    "description": "English walnut 12 seater dining table with traditional pedestal legs",
+    "price": 4995.0,
+    "available": false,
+    "images": [
+      { "id": 1, "src": "src/assets/walnut-dining-table-01.png", "alt":"walnut-dining-table-01"}
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Customised Photo Frame",
+    "description": "Handmade solid wood personalised photo frame",
+    "price": 75.0,
+    "available": true,
+    "images": [
+      { "id": 1, "src": "src/assets/photo-frame-arabella-02.png", "alt":"photo-frame-arabella-02"},
+      { "id": 2, "src": "src/assets/photo-frame-arabella.png", "alt": "photo-frame-arabella" },
+      { "id": 3, "src": "src/assets/photo-frame-cora.png", "alt": "photo-frame-cora" },
+      { "id": 4, "src": "src/assets/photo-frame-albie.png", "alt": "photo-frame-albie" },
+      { "id": 5, "src": "src/assets/photo-frame-isla.png", "alt": "photo-frame-isla" },
+      { "id": 6, "src": "src/assets/photo-frame-rose.png", "alt": "photo-frame-arabella-rose" }
+    ]
+  },
+  {
+    "id": 1,
+    "title": "'Close The Gate' - Personalised Letter Rack",
+    "description": "Handmade oak letter rack with personalisation",
+    "price": 65.0,
+    "available": false,
+    "images": [
+      { "id": 1, "src": "src/assets/gate-letter-rack-01.png", "alt":"gate-letter-rack-01"},
+      { "id": 2, "src": "src/assets/gate-letter-rack-02.png", "alt": "gate-letter-rack-02" },
+      { "id": 3, "src": "src/assets/gate-letter-rack-03.png", "alt": "gate-letter-rack-03" },
+      { "id": 4, "src": "src/assets/gate-letter-rack-04.png", "alt": "gate-letter-rack-04" },
+      { "id": 5, "src": "src/assets/gate-letter-rack-05.png", "alt": "gate-letter-rack-05" },
+      { "id": 6, "src": "src/assets/gate-letter-rack-06.png", "alt": "gate-letter-rack-06" }
+    ]
+  },
+  {
+    "id": 1,
+    "title": "'Close The Gate' - Personalised Letter Rack",
+    "description": "Handmade oak letter rack with personalisation",
+    "price": 65.0,
+    "available": false,
+    "images": [
+      { "id": 1, "src": "src/assets/gate-letter-rack-01.png", "alt":"gate-letter-rack-01"},
+      { "id": 2, "src": "src/assets/gate-letter-rack-02.png", "alt": "gate-letter-rack-02" },
+      { "id": 3, "src": "src/assets/gate-letter-rack-03.png", "alt": "gate-letter-rack-03" },
+      { "id": 4, "src": "src/assets/gate-letter-rack-04.png", "alt": "gate-letter-rack-04" },
+      { "id": 5, "src": "src/assets/gate-letter-rack-05.png", "alt": "gate-letter-rack-05" },
+      { "id": 6, "src": "src/assets/gate-letter-rack-06.png", "alt": "gate-letter-rack-06" }
+    ]
+  },
+  {
+    "id": 1,
+    "title": "'Close The Gate' - Personalised Letter Rack",
+    "description": "Handmade oak letter rack with personalisation",
+    "price": 65.0,
+    "available": false,
+    "images": [
+      { "id": 1, "src": "src/assets/gate-letter-rack-01.png", "alt":"gate-letter-rack-01"},
+      { "id": 2, "src": "src/assets/gate-letter-rack-02.png", "alt": "gate-letter-rack-02" },
+      { "id": 3, "src": "src/assets/gate-letter-rack-03.png", "alt": "gate-letter-rack-03" },
+      { "id": 4, "src": "src/assets/gate-letter-rack-04.png", "alt": "gate-letter-rack-04" },
+      { "id": 5, "src": "src/assets/gate-letter-rack-05.png", "alt": "gate-letter-rack-05" },
+      { "id": 6, "src": "src/assets/gate-letter-rack-06.png", "alt": "gate-letter-rack-06" }
+    ]
+  }
+  
+]

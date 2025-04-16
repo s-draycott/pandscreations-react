@@ -1,26 +1,32 @@
 {
     "peteSallySlides": [
         {
+            "id": 1,
             "src": "src/assets/sally-pete-planer.jpg",
             "alt": "sally-pete-planer.jpg"
         },
         {
+            "id": 2,
             "src": "src/assets/sally-pete-young.jpg",
             "alt": "sally-pete-young.jpg"
         },
         {
+            "id": 3,
             "src": "src/assets/sawmill.jpg",
             "alt": "sawmill.jpg"
         },
         {
+            "id": 4,
             "src": "src/assets/sally-pete-wedding.jpg",
             "alt": "sally-pete-wedding.jpg"
         },
         {
+            "id": 5,
             "src": "src/assets/pete-sally-plastering.jpg",
             "alt": "pete-sally-plastering.jpg"
         },
         {
+            "id": 6,
             "src": "src/assets/pete-sally-devon.jpg",
             "alt": "pete-sally=devon.jpg"
         }
@@ -28,30 +34,37 @@
 
     "peteSolo": [
         {
+            "id": 1,
             "src": "src/assets/pete-lana.jpg",
             "alt": "pete-lana.jpg"
         },
         {
+            "id": 2,
             "src": "src/assets/pete-sawmill.jpg",
             "alt": "pete-sawmill,jpg"
         },
         {
+            "id": 3,
             "src": "src/assets/pete-spraying.jpg",
             "alt": "pete-spraying.jpg"
         },
         {
+            "id": 4,
             "src": "src/assets/pete-router.jpg",
             "alt": "pete-router.jpg"
         },
         {
+            "id": 5,
             "src": "src/assets/pete-lana2.jpg",
             "alt": "pete-lana2.jpg"
         },
         {
+            "id": 6,
             "src": "src/assets/pete-forklift.jpg",
             "alt": "pete-forklift.jpg"
         },
         {
+            "id": 7,
             "src": "src/assets/pete-tractor.jpg",
             "alt": "pete-tractor.jpg"
         }
@@ -59,14 +72,17 @@
 
     "sallySolo": [
         {
+            "id": 1,
             "src": "src/assets/sally-dissection.jpg",
             "alt": "sally-dissection.jpg"
         },
         {
+            "id": 2,
             "src": "src/assets/sally-lab.jpg",
             "alt": "sally-lab.jpg"
         },
         {
+            "id": 3,
             "src": "src/assets/sally-conference.jpg",
             "alt": "sally-conference.jpg"
         }

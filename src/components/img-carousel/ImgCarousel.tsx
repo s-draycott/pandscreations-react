@@ -10,9 +10,11 @@ interface Slide {
 
 interface ImgCarouselProps {
     data: Slide[];
+    autoSlide?: boolean;
+    customClass?: string;
 }
 
-const ImgCarousel: React.FC<ImgCarouselProps> = ({ data }) => {
+const ImgCarousel: React.FC<ImgCarouselProps> = ({ data, autoSlide = true, customClass = '' }) => {
     const [slide, setSlide] = useState(0);
 
     const nextSlide = () => {
@@ -24,11 +26,11 @@ const ImgCarousel: React.FC<ImgCarouselProps> = ({ data }) => {
     };
 
     useEffect(() => {
-        const intervalId = setInterval(nextSlide, 10000);
-        return () => {
-            clearInterval(intervalId);
-        };
-    }, [data.length]);
+        if (autoSlide) {
+            const intervalId = setInterval(nextSlide, 10000);
+            return () => clearInterval(intervalId);
+        }
+    }, [autoSlide, data.length]);
 
     return (
         <div className={styles.carousel}>
@@ -44,7 +46,7 @@ const ImgCarousel: React.FC<ImgCarouselProps> = ({ data }) => {
                         key={i}
                         className={`${styles.slide} ${
                             i === slide ? styles.show : styles.slideHidden
-                        } `}
+                        }  ${customClass} `}
                     />
                 );
             })}

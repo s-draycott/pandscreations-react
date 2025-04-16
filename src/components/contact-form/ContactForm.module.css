@@ -37,9 +37,10 @@
 .formInput {
   width: 30rem;
   border-radius: 2px;
+  font-size: 1.2rem;
   padding: 10px;
   border: none;
-  font-family: "Raleway", sans-serif;
+  font-family: "Cormorant", serif;
   box-shadow: 1px 1px 5px rgb(221, 215, 205);
   border: 1px solid rgb(226, 197, 174);
 }

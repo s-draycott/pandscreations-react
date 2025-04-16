@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Palanquin&display=swap");
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.heading {
+  font-family: "Cormorant", serif;
+  font-size: 3rem;
+  letter-spacing: 0.4rem;
+  text-align: center;
+  margin: 40px auto 40px auto;
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  padding: 10px;
+  justify-items: center;
+  grid-auto-rows: auto;
+}/*# sourceMappingURL=Products.module.css.map */

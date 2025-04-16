@@ -1,0 +1,43 @@
+@import "../../stylesheets/Variables.scss";
+
+.productCard {
+    overflow: hidden;
+    width: 400px;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: scale(1.01);
+    }
+}
+.productInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: $headingFont;
+    font-size: 1.4rem;
+}
+
+.productTitle {
+    font-family: $headingFont;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.productImg {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .productPrice {
+    margin: 0;
+  }
+
+  .productStatus {
+    margin: 0;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }

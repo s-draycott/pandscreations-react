@@ -31,7 +31,7 @@ export default function About() {
             />
             <div className={`${styles.aboutContainer} ${styles.one}`}>
                 <div className={styles.carouselContainerOne}>
-                    <ImgCarousel data={peteSallySlides} />
+                    <ImgCarousel data={peteSallySlides} autoSlide={true} />
                 </div>
                 <p className={styles.aboutText}>
                     Thanks for taking the time to get to know us! I’m Sally and one half of P&S
@@ -55,7 +55,7 @@ export default function About() {
             </div>
             <div className={`${styles.aboutContainer} ${styles.two}`}>
                 <div className={styles.carouselContainerTwo}>
-                    <ImgCarousel data={peteSolo} />
+                    <ImgCarousel data={peteSolo} autoSlide={true} />
                 </div>
                 <p className={styles.aboutText}>
                     Pete is a third generation farmer and has spent his life running our family farm
@@ -88,7 +88,7 @@ export default function About() {
             />
             <div className={`${styles.aboutContainer} ${styles.two}`}>
                 <div className={styles.carouselContainerTwo}>
-                    <ImgCarousel data={sallySolo} />
+                    <ImgCarousel data={sallySolo} autoSlide={true} />
                 </div>
                 <p className={styles.aboutText}>
                     As for me, I’m a scientist by trade and have worked in research for 10 years
