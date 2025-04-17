@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import logo from '../../assets/white-transparent-03.png';
+import logo from '../../../public/assets/white-transparent-03.png';
 
 import styles from './Header.module.css';
 

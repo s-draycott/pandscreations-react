@@ -8,9 +8,9 @@ import styles from './Products.module.css';
 
 export default function Products() {
     return (
-        <div className={styles.pageWrapper}>
+        <div className={`'pageWrapper' ${styles.pageWrapper}`}>
             <Header />
-            <div className={styles.mainContent}>
+            <div className={`"mainContent" ${styles.mainContent}`}>
                 <h2 className={styles.heading}>PRODUCTS</h2>
                 <div className={styles.productGrid}>
                     {(products as Product[]).map((product) => (

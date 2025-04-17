@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import { Product } from '../../types/products';
 import ImgCarousel from '../img-carousel/ImgCarousel';
 
@@ -17,20 +19,28 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
     return (
         <div className={styles.productCard}>
-            <ImgCarousel data={carouselData} autoSlide={false} customClass={styles.productImg} />
+            <Link to={`/products/${product.id}`} className={styles.productLink}>
+                <ImgCarousel
+                    data={carouselData}
+                    autoSlide={false}
+                    customClass={styles.productImg}
+                />
 
-            <div className={styles.productInfo}>
-                {titleLines.map((line, index) => (
-                    <span className={styles.productTitle} key={index}>
-                        {line}
-                        {index < titleLines.length - 1 && <br />}
-                    </span>
-                ))}
-                <p className={styles.productPrice}>£{price.toFixed(2)}</p>
-                <p className={`${styles.productStatus} ${available ? 'available' : 'sold-out'}`}>
-                    {available ? '' : 'SOLD OUT'}
-                </p>
-            </div>
+                <div className={styles.productInfo}>
+                    {titleLines.map((line, index) => (
+                        <span className={styles.productTitle} key={index}>
+                            {line}
+                            {index < titleLines.length - 1 && <br />}
+                        </span>
+                    ))}
+                    <p className={styles.productPrice}>£{price.toFixed(2)}</p>
+                    <p
+                        className={`${styles.productStatus} ${available ? 'available' : 'sold-out'}`}
+                    >
+                        {available ? '' : 'SOLD OUT'}
+                    </p>
+                </div>
+            </Link>
         </div>
     );
 };

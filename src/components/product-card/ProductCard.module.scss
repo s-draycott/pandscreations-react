@@ -23,8 +23,16 @@
 
 .productTitle {
     font-family: $headingFont;
+    color: $brownColor;
+    font-weight: 600;
+    text-decoration: none;
     text-align: center;
     font-size: 1.5rem;
+}
+
+.productLink {
+  text-decoration: none;
+  color: $brownColor
 }
 
 .productImg {

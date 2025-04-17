@@ -23,8 +23,16 @@
 
 .productTitle {
   font-family: "Cormorant", serif;
+  color: rgb(75, 55, 40);
+  font-weight: 600;
+  text-decoration: none;
   text-align: center;
   font-size: 1.5rem;
+}
+
+.productLink {
+  text-decoration: none;
+  color: rgb(75, 55, 40);
 }
 
 .productImg {

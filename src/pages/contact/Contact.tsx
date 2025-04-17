@@ -6,9 +6,9 @@ import styles from './Contact.module.css';
 
 export default function Contact() {
     return (
-        <div className={styles.pageWrapper}>
+        <div className="pageWrapper">
             <Header />
-            <main className={styles.mainContent}>
+            <main className="mainContent">
                 <ContactForm />
             </main>
             <Footer />

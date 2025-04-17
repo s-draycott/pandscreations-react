@@ -1,0 +1,20 @@
+@import "../../stylesheets/Variables.scss";
+
+.mainContent {
+    display: flex;
+    justify-content: center;
+    margin: 30px auto;
+}
+.productInfo {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    flex-wrap: wrap;
+    padding: 20px;
+    font-family: $headingFont;
+    font-size: 1.5rem;
+}
+.title {
+    font-family: $headingFont;
+    font-size: 3rem;
+}

@@ -1,4 +1,4 @@
-import aboutBannerImg from '../../assets/graduation.jpg';
+import aboutBannerImg from '../../../public/assets/graduation.jpg';
 import AboutBanner from '../../components/about-banner/AboutBanner';
 import ContactForm from '../../components/contact-form/ContactForm';
 import Footer from '../../components/footer/Footer';
@@ -9,15 +9,16 @@ import styles from './Home.module.css';
 
 export default function Home() {
     return (
-        <>
+        <div className="pageWrapper">
             <Header />
-            <HeroBanner />
-            <div className={styles.productScroll}>Available Products</div>
-            <AboutBanner
-                mediaSrc={aboutBannerImg}
-                mediaType="image"
-                heading="About P&S Creations"
-                text="  At P&S Creations, father-daughter duo Pete and Sally
+            <div className="mainContent">
+                <HeroBanner />
+                <div className={styles.productScroll}>Available Products</div>
+                <AboutBanner
+                    mediaSrc={aboutBannerImg}
+                    mediaType="image"
+                    heading="About P&S Creations"
+                    text="  At P&S Creations, father-daughter duo Pete and Sally
                         join forces to craft high-quality, handmade wooden
                         products with a personal touch. Our mission is to create
                         bespoke pieces that tell a story and reflect the beauty
@@ -27,9 +28,10 @@ export default function Home() {
                         sustainability ensures that every creation not only has
                         its own unique charm but also honours the natural world
                         from which it was made and inspired."
-            />
-            <ContactForm />
+                />
+                <ContactForm />
+            </div>
             <Footer />
-        </>
+        </div>
     );
 }

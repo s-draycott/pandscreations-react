@@ -1,7 +1,7 @@
-import logo from '../../assets/brown-transparent-logo-03-03.png';
-import etsyLogo from '../../assets/etsy-brands.svg';
-import facebookLogo from '../../assets/facebook-f-brands.svg';
-import instagramLogo from '../../assets/instagram-brands.svg';
+import logo from '../../../public/assets/brown-transparent-logo-03-03.png';
+import etsyLogo from '../../../public/assets/etsy-brands.svg';
+import facebookLogo from '../../../public/assets/facebook-f-brands.svg';
+import instagramLogo from '../../../public/assets/instagram-brands.svg';
 
 import styles from './Footer.module.css';
 
