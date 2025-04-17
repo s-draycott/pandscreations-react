@@ -1,7 +1,3 @@
-import aboutBannerImg from '../../../public/assets/graduation.jpg';
-import bannerImg from '../../../public/assets/planer-together.jpg';
-import sawmillVideo from '../../../public/assets/sawmill-construction-video.mp4';
-import fallback from '../../../public/assets/sawmill.jpg';
 import AboutBanner from '../../components/about-banner/AboutBanner';
 import Footer from '../../components/footer/Footer';
 import Header from '../../components/header/Header';
@@ -9,6 +5,11 @@ import ImgCarousel from '../../components/img-carousel/ImgCarousel';
 import { peteSallySlides, peteSolo, sallySolo } from '../../data/ImageCarouselData.json';
 
 import styles from './About.module.css';
+
+const aboutBannerImg = '/assets/graduation.jpg';
+const bannerImg = '/assets/planer-together.jpg';
+const sawmillVideo = '/assets/sawmill-construction-video.mp4';
+const fallback = '/assets/sawmill.jpg';
 
 export default function About() {
     return (

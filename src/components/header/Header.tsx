@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 
-import logo from '../../../public/assets/white-transparent-03.png';
+const logo = '/assets/white-transparent-03.png';
 
 import styles from './Header.module.css';
 

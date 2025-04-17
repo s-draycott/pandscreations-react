@@ -1,9 +1,9 @@
-import logo from '../../../public/assets/brown-transparent-logo-03-03.png';
-import etsyLogo from '../../../public/assets/etsy-brands.svg';
-import facebookLogo from '../../../public/assets/facebook-f-brands.svg';
-import instagramLogo from '../../../public/assets/instagram-brands.svg';
-
 import styles from './Footer.module.css';
+
+const logo = '/assets/brown-transparent-logo-03-03.png';
+const etsyLogo = '/assets/etsy-brands.svg';
+const facebookLogo = '/assets/facebook-f-brands.svg';
+const instagramLogo = '/assets/instagram-brands.svg';
 
 const Footer = () => {
     return (

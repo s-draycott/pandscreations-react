@@ -1,9 +1,10 @@
-import aboutBannerImg from '../../../public/assets/graduation.jpg';
 import AboutBanner from '../../components/about-banner/AboutBanner';
 import ContactForm from '../../components/contact-form/ContactForm';
 import Footer from '../../components/footer/Footer';
 import Header from '../../components/header/Header';
 import HeroBanner from '../../components/hero-banner/HeroBanner';
+
+const aboutBannerImg = '/assets/graduation.jpg';
 
 import styles from './Home.module.css';
 
