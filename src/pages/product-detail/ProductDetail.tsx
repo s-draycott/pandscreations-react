@@ -25,7 +25,9 @@ const ProductDetail = () => {
             </p>
         );
 
-    const carouselData = product.images.map((img) => ({
+    const { images } = product;
+
+    const carouselData = images.map((img) => ({
         src: img.src,
         alt: img.alt,
     }));
@@ -33,7 +35,7 @@ const ProductDetail = () => {
     return (
         <div className="pageWrapper">
             <Header />
-            <div className={`mainContent ${styles.mainContent}`}>
+            <div className={`mainContent' ${styles.mainContent}`}>
                 <ImgCarousel
                     data={carouselData}
                     autoSlide={false}

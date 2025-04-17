@@ -1,17 +1,16 @@
-// import React from "react";
-import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useLocation, Link } from 'react-router-dom';
 
 import logo from '../../../public/assets/white-transparent-03.png';
 
 import styles from './Header.module.css';
 
 const Header = () => {
-    //Location Handler
+    // Location Handler
     const location = useLocation();
     const isHomePage = location.pathname === '/' || location.pathname === '/home';
 
-    //Handle mobile menu
+    // Handle mobile menu
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen((prev) => !prev);
@@ -19,6 +18,7 @@ const Header = () => {
 
     // Scroll Handler
     const [isScrolled, setIsScrolled] = useState(false);
+
     const handleScroll = () => {
         if (window.scrollY > 0) {
             setIsScrolled(true);
@@ -26,6 +26,7 @@ const Header = () => {
             setIsScrolled(false);
         }
     };
+
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
 
@@ -36,37 +37,56 @@ const Header = () => {
 
     return (
         <div
-            className={`${styles.navbar} ${isHomePage ? styles.homePage : ''} ${
-                isScrolled ? styles.scrolled : ''
-            }`}
+            className={`${styles.navbar} ${isHomePage ? styles.homePage : ''} ${isScrolled ? styles.scrolled : ''}`}
         >
             <div className={styles.navContainer}>
                 <button className={styles.hamburgerIcon} onClick={toggleMobileMenu}>
                     &#9776;
                 </button>
-                <a href="/home">
-                    <img id={styles.logoImg} src={logo} alt="P&S Creations logo"></img>
-                </a>
+                <Link to="/home">
+                    <img id={styles.logoImg} src={logo} alt="P&S Creations logo" />
+                </Link>
                 <ul className={`${styles.navMenu} ${isMobileMenuOpen ? styles.open : ''}`}>
                     <li>
-                        <a className={styles.navBtn} href="/about">
+                        <Link className={styles.navBtn} to="/about">
                             ABOUT
-                        </a>
+                        </Link>
                     </li>
                     <li>
-                        <a className={styles.navBtn} href="/gallery">
+                        <Link className={styles.navBtn} to="/gallery">
                             GALLERY
-                        </a>
+                        </Link>
                     </li>
-                    <li>
-                        <a className={styles.navBtn} href="/products">
-                            PRODUCTS
-                        </a>
+                    <li className={styles.dropdown}>
+                        <span className={styles.navBtn}>PRODUCTS</span>
+                        <ul className={styles.dropdownMenu}>
+                            <li>
+                                <Link className={styles.navBtn} to="/products">
+                                    All
+                                </Link>
+                            </li>
+                            <li>
+                                <Link className={styles.navBtn} to="/products/category/woodwork">
+                                    Woodwork
+                                </Link>
+                            </li>
+                            <li>
+                                <Link className={styles.navBtn} to="/products/category/artwork">
+                                    Artwork
+                                </Link>
+                            </li>
+                            <li>
+                                <Link className={styles.navBtn} to="/products/category/wedding">
+                                    Wedding Stationary
+                                </Link>
+                            </li>
+                        </ul>
                     </li>
+
                     <li>
-                        <a className={styles.navBtn} href="/contact">
+                        <Link className={styles.navBtn} to="/contact">
                             CONTACT
-                        </a>
+                        </Link>
                     </li>
                 </ul>
             </div>

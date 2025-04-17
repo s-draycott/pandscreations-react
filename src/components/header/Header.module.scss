@@ -38,7 +38,6 @@
 
 }
 
-
 .navContainer {
     display: grid;
     justify-items: center;
@@ -83,7 +82,6 @@
     text-decoration: none;
     letter-spacing: 2px;
     font-family: $headingFont;
-    font-weight: 500;
     font-size: larger;
     padding: 5px;
     position: relative;
@@ -143,6 +141,41 @@
     left: 20px;
     @media (max-width: $tablet) {
         display: block;
+    }
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+
+    &:hover .dropdownMenu {
+        display: block;
+    }
+}
+
+.dropdownMenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -50px;
+    background-color: $brownColor;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    list-style: none;
+    text-align: center;
+    padding: 10px 0;
+    margin: 0;
+    z-index: 1000;
+    min-width: 200px;
+
+    li {
+        padding: 10px 20px;
+        white-space: nowrap;
+
+        a {
+            color: $whiteColor;
+            text-decoration: none;
+            display: block;
+        }
     }
 }
 

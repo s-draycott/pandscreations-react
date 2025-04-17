@@ -1,13 +1,5 @@
 @import "../../stylesheets/Variables.scss";
 
-.mainContent{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
 .heading {
     font-family: $headingFont;
     font-size: 3rem;
@@ -18,9 +10,12 @@
 
 .productGrid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); // Responsive columns
-    gap: 15px; // Space between the product cards
-    padding: 10px; // Add some padding around the grid
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
+    gap: 15px; 
+    margin: 0 auto;
     justify-items: center; // Center the product cards horizontally
     grid-auto-rows: auto;
+
+    /* Ensure a max of 4 columns */
+    max-width: calc(4 * 400px + 3 * 30px); // Adjust to fit the 4 columns with gaps (3 gaps)
 }

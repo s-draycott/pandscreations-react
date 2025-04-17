@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 
 import { Product } from '../../types/products';
-import ImgCarousel from '../img-carousel/ImgCarousel';
 
 import styles from './ProductCard.module.css';
 
@@ -12,25 +11,29 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ product, onClick }) => {
     const { title, price, available, images } = product;
-    const carouselData = images.map((img) => ({
-        src: img.src,
-        alt: img.alt,
-    }));
+
+    // Find the image with id '1' (the first image)
+    const firstImage = images.find((img) => img.id === '1');
+
+    // If no image with id '1' is found, fallback (optional)
+    if (!firstImage) {
+        return <div>No image found for this product.</div>;
+    }
+
     const titleLines = title.split('\n');
 
     return (
         <div className={styles.productCard}>
             <Link
-                to={`/products/${product.id}`}
+                to={`/products/${product.id}`} // Navigate to product detail page
                 className={styles.productLink}
-                onClick={() => onClick(product.id)}
+                onClick={() => onClick(product.id)} // Optionally save scroll position
             >
-                <ImgCarousel
-                    data={carouselData}
-                    autoSlide={false}
-                    customClass={styles.productImg}
+                <img
+                    src={firstImage.src} // Show only the first image on the products page
+                    alt={firstImage.alt}
+                    className={styles.productImg}
                 />
-
                 <div className={styles.productInfo}>
                     {titleLines.map((line, index) => (
                         <span className={styles.productTitle} key={index}>
