@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 import Footer from '../../components/footer/Footer';
@@ -12,8 +13,10 @@ import styles from './ProductDetail.module.css';
 const ProductDetail = () => {
     const { id } = useParams<{ id: string }>();
     const product = (products as Product[]).find((p) => p.id === id);
-    console.log('Product:', product);
-    console.log('Product images:', product?.images);
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     if (!product)
         return (
@@ -26,11 +29,11 @@ const ProductDetail = () => {
         src: img.src,
         alt: img.alt,
     }));
-    console.log(product);
+
     return (
         <div className="pageWrapper">
             <Header />
-            <div className={`"mainContent" ${styles.mainContent}`}>
+            <div className={`mainContent ${styles.mainContent}`}>
                 <ImgCarousel
                     data={carouselData}
                     autoSlide={false}

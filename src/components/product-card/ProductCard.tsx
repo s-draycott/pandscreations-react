@@ -7,9 +7,10 @@ import styles from './ProductCard.module.css';
 
 interface ProductCardProps {
     product: Product;
+    onClick: (id: string) => void;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ product, onClick }) => {
     const { title, price, available, images } = product;
     const carouselData = images.map((img) => ({
         src: img.src,
@@ -19,7 +20,11 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
     return (
         <div className={styles.productCard}>
-            <Link to={`/products/${product.id}`} className={styles.productLink}>
+            <Link
+                to={`/products/${product.id}`}
+                className={styles.productLink}
+                onClick={() => onClick(product.id)}
+            >
                 <ImgCarousel
                     data={carouselData}
                     autoSlide={false}
