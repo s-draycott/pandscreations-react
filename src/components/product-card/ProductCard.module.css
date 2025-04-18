@@ -2,6 +2,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Palanquin&display=swap");
 .productCard {
   overflow: hidden;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
   width: 400px;
   display: flex;
   overflow: hidden;

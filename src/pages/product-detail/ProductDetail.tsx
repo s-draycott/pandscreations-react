@@ -35,12 +35,15 @@ const ProductDetail = () => {
     return (
         <div className="pageWrapper">
             <Header />
-            <div className={`mainContent' ${styles.mainContent}`}>
-                <ImgCarousel
-                    data={carouselData}
-                    autoSlide={false}
-                    customClass={styles.productImg}
-                />
+            <div className={`mainContent ${styles.mainContent}`}>
+                <div className={styles.carouselContainer}>
+                    <ImgCarousel
+                        data={carouselData}
+                        autoSlide={false}
+                        customClass={styles.productImg}
+                    />
+                </div>
+
                 <div className={styles.productInfo}>
                     <h1 className={styles.title}>{product.title}</h1>
                     <p className={styles.price}>£{product.price.toFixed(2)}</p>

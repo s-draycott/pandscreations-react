@@ -3,7 +3,12 @@
 .mainContent {
   display: flex;
   justify-content: center;
-  margin: 30px auto;
+  margin: 30px 20px;
+}
+@media (max-width: 600px) {
+  .mainContent {
+    flex-direction: column;
+  }
 }
 
 .productInfo {
@@ -19,4 +24,21 @@
 .title {
   font-family: "Cormorant", serif;
   font-size: 3rem;
+}
+
+.carouselContainer {
+  min-width: 400px;
+  max-width: 600px;
+  width: 100%;
+  margin-right: 30px;
+}
+@media (max-width: 600px) {
+  .carouselContainer {
+    max-width: 400px;
+    min-width: 150px;
+  }
+}
+
+.productImg {
+  width: 100%;
 }/*# sourceMappingURL=ProductDetail.module.css.map */

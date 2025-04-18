@@ -3,6 +3,7 @@ import ContactForm from '../../components/contact-form/ContactForm';
 import Footer from '../../components/footer/Footer';
 import Header from '../../components/header/Header';
 import HeroBanner from '../../components/hero-banner/HeroBanner';
+import ProductScroll from '../../components/product-scroll/ProductScroll';
 
 const aboutBannerImg = '/assets/graduation.jpg';
 
@@ -14,7 +15,9 @@ export default function Home() {
             <Header />
             <div className="mainContent">
                 <HeroBanner />
-                <div className={styles.productScroll}>Available Products</div>
+                <div className={styles.productScroll}>
+                    <ProductScroll />
+                </div>
                 <AboutBanner
                     mediaSrc={aboutBannerImg}
                     mediaType="image"

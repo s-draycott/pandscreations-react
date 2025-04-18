@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from 'react-icons/io';
 
 import styles from './Img-Carousel.module.css';
@@ -17,12 +17,12 @@ interface ImgCarouselProps {
 const ImgCarousel: React.FC<ImgCarouselProps> = ({ data, autoSlide = true, customClass = '' }) => {
     const [slide, setSlide] = useState(0);
 
-    const nextSlide = () => {
-        setSlide((prevSlide) => (prevSlide + 1) % data.length); // Loop back to first slide
-    };
+    const nextSlide = useCallback(() => {
+        setSlide((prevSlide) => (prevSlide + 1) % data.length);
+    }, [data.length]);
 
     const prevSlide = () => {
-        setSlide((prevSlide) => (prevSlide - 1 + data.length) % data.length); // Loop back to last slide
+        setSlide((prevSlide) => (prevSlide - 1 + data.length) % data.length);
     };
 
     useEffect(() => {
@@ -30,7 +30,7 @@ const ImgCarousel: React.FC<ImgCarouselProps> = ({ data, autoSlide = true, custo
             const intervalId = setInterval(nextSlide, 10000);
             return () => clearInterval(intervalId);
         }
-    }, [autoSlide, data.length]);
+    }, [autoSlide, data.length, nextSlide]);
 
     return (
         <div className={styles.carousel}>
