@@ -1,37 +1,37 @@
 @import "../../stylesheets/Variables.scss";
 
 .productCard {
-    overflow: hidden;
-    flex: 0 0 auto;
-    scroll-snap-align: start;
-    width: 400px;
-    display: flex;
-    overflow: hidden;
-    flex-direction: column;
-    margin: 0 auto;
-    transition: transform 0.3s ease;
+  overflow: hidden;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  width: 400px;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  margin: 0 auto;
+  transition: transform 0.3s ease;
 
-    &:hover {
-        transform: scale(1.01);
-    }
+  &:hover {
+      transform: scale(1.01);
+  }
 }
 
 .productInfo{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-family: $headingFont;
-    font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: $headingFont;
+  font-size: 1.4rem;
 }
 
 .productTitle {
-    font-family: $headingFont;
-    color: $brownColor;
-    font-weight: 600;
-    text-decoration: none;
-    text-align: center;
-    font-size: 1.5rem;
+  font-family: $headingFont;
+  color: $brownColor;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.5rem;
 }
 
 .productLink {
@@ -43,21 +43,54 @@
   align-items: center;
 }
 
+.imgContainer {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  flex-shrink: 0; // prevent shrinking in flex
+  overflow: hidden; // prevent banner from breaking out
+
+  @media (max-width: $mobile) {
+    height: 300px;
+    width: 300px;
+  }
+}
+
 .productImg {
-    height: 400px;
-    object-fit: cover;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 
-    @media (max-width: $mobile) {
-      height: 300px;
-    }
+  @media (max-width: $mobile) {
+    height: 100%;
   }
+}
 
-  .productPrice {
-    margin: 0;
-  }
+.productPrice {
+  margin: 0;
+}
 
-  .productStatus {
-    margin: 0;
-    font-weight: 600;
-    margin-bottom: 20px;
+.productStatus {
+  margin: 0;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.soldOutBanner {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 400px;
+  background-color: rgba(255, 255, 255, 0.3); // semi-transparent black
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  font-weight: bold;
+  font-size: 1.2rem;
+  font-family: $headingFont;
+  z-index: 1;
+
+  @media(max-width: $mobile) {
+    width: 300px;
   }
+}

@@ -29,11 +29,10 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onClick }) => {
                 className={styles.productLink}
                 onClick={() => onClick(product.id)} // Optionally save scroll position
             >
-                <img
-                    src={firstImage.src} // Show only the first image on the products page
-                    alt={firstImage.alt}
-                    className={styles.productImg}
-                />
+                <div className={styles.imgContainer}>
+                    <img src={firstImage.src} alt={firstImage.alt} className={styles.productImg} />
+                    {!available && <div className={styles.soldOutBanner}>SOLD OUT</div>}
+                </div>
                 <div className={styles.productInfo}>
                     {titleLines.map((line, index) => (
                         <span className={styles.productTitle} key={index}>
@@ -42,11 +41,6 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onClick }) => {
                         </span>
                     ))}
                     <p className={styles.productPrice}>£{price.toFixed(2)}</p>
-                    <p
-                        className={`${styles.productStatus} ${available ? 'available' : 'sold-out'}`}
-                    >
-                        {available ? '' : 'SOLD OUT'}
-                    </p>
                 </div>
             </Link>
         </div>

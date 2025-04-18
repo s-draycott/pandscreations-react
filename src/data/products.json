@@ -5,7 +5,7 @@
     "category": "woodwork",
     "description": "Add a touch of countryside charm! This handmade solid oak letter rack is inspired by classic country and farm gates - the perfect blend of rustic style and practical design. A thoughtful gift for someone who loves handcrafted one-of-a-kind pieces\nEach letter rack can be personalised with hand-burned lettering - whether it's a family name, house name or just something meaningful to you." ,
     "price": 65.0,
-    "available": true,
+    "available": false,
     "images": [
       { "id": "1", "src": "/assets/gate-letter-rack-01.png", "alt": "gate-letter-rack-01" },
       { "id": "2", "src": "/assets/gate-letter-rack-02.png", "alt": "gate-letter-rack-02" },
