@@ -21,7 +21,7 @@
     "category": "wedding",
     "description": "English walnut 12 seater dining table with traditional pedestal legs",
     "price": 4995.0,
-    "available": true,
+    "available": false,
     "images": [
       { "id": "1", "src": "/assets/walnut-dining-table-01.png", "alt": "walnut-dining-table-01" }
     ]

@@ -47,8 +47,8 @@ const ProductDetail = () => {
                 <div className={styles.productInfo}>
                     <h1 className={styles.title}>{product.title}</h1>
                     <p className={styles.price}>£{product.price.toFixed(2)}</p>
-                    <p className={styles.description}>{product.description}</p>
                     <p className={styles.status}>{product.available ? 'In stock' : 'SOLD OUT'}</p>
+                    <p className={styles.description}>{product.description}</p>
                 </div>
             </div>
             <Footer />

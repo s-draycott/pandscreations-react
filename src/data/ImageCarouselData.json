@@ -34,37 +34,37 @@
 
     "peteSolo": [
         {
-            "id": "1",
+            "id": "4",
             "src": "/assets/pete-lana.jpg",
             "alt": "pete-lana.jpg"
         },
         {
-            "id": "2",
+            "id": "5",
             "src": "/assets/pete-sawmill.jpg",
             "alt": "pete-sawmill,jpg"
         },
         {
-            "id": "3",
+            "id": "6",
             "src": "/assets/pete-spraying.jpg",
             "alt": "pete-spraying.jpg"
         },
         {
-            "id": "4",
+            "id": "7",
             "src": "/assets/pete-router.jpg",
             "alt": "pete-router.jpg"
         },
         {
-            "id": "5",
+            "id": "8",
             "src": "/assets/pete-lana2.jpg",
             "alt": "pete-lana2.jpg"
         },
         {
-            "id": "6",
+            "id": "9",
             "src": "/assets/pete-forklift.jpg",
             "alt": "pete-forklift.jpg"
         },
         {
-            "id": "7",
+            "id": "10",
             "src": "/assets/pete-tractor.jpg",
             "alt": "pete-tractor.jpg"
         }
@@ -72,17 +72,17 @@
 
     "sallySolo": [
         {
-            "id": "1",
+            "id": "11",
             "src": "/assets/sally-dissection.jpg",
             "alt": "sally-dissection.jpg"
         },
         {
-            "id": "2",
+            "id": "12",
             "src": "/assets/sally-lab.jpg",
             "alt": "sally-lab.jpg"
         },
         {
-            "id": "3",
+            "id": "13",
             "src": "/assets/sally-conference.jpg",
             "alt": "sally-conference.jpg"
         }

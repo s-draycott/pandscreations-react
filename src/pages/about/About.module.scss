@@ -30,11 +30,13 @@
 
 .carouselContainerOne {
     margin: 0px 50px 20px 50px;
+    min-width: 400px;
 }
 
 .carouselContainerTwo {
     float: right;
     margin: auto 50px auto 50px;
+    min-width: 400px;
 }
 
 .aboutText {

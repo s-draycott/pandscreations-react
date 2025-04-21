@@ -77,7 +77,7 @@ const Header = () => {
                             </li>
                             <li>
                                 <Link className={styles.navBtn} to="/products/category/wedding">
-                                    Wedding Stationary
+                                    Wedding Stationery
                                 </Link>
                             </li>
                         </ul>
