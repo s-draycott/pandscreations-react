@@ -1,15 +1,17 @@
 @import "../../stylesheets/Variables.scss";
-
+.offerBanner {
+    width: 100%;
+}
 .navbar {
     display: flex;
     justify-content: center;
-    position: sticky;
+    position: relative;
     top: 0px;
     background-color: $brownColor;
     height: 20%;
     width: 100%;
     z-index: 10;
-    transition: background-color 0.5s ease, box-shadow 0.3s ease;
+    transition: background-color 0.5s ease, box-shadow 0.3s ease, position 0.5s ease;
     flex-wrap: wrap;
 
     @media (max-width: $tablet) {
@@ -18,6 +20,11 @@
 
     &.homePage {
         background-color: $brownColorTranslucent;
+
+        &.scrolled {
+            background-color: $brownColor;
+        }
+
         @media (max-width: $tablet) {
             background-color: $brownColor;
         }
@@ -35,6 +42,11 @@
     &.scrolled:hover {
         background-color: $brownColor;
     }
+
+    &.visible {
+        position: sticky;
+    }
+
 
 }
 

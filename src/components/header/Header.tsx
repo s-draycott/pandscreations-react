@@ -3,50 +3,67 @@ import { useLocation, Link } from 'react-router-dom';
 
 const logo = '/assets/white-transparent-03.png';
 
+import OfferBanner from '../offer-banner/OfferBanner';
+
 import styles from './Header.module.css';
 
 const Header = () => {
-    // Location Handler
     const location = useLocation();
     const isHomePage = location.pathname === '/' || location.pathname === '/home';
 
-    // Handle mobile menu
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const toggleMobileMenu = () => {
-        setIsMobileMenuOpen((prev) => !prev);
-    };
-
-    // Scroll Handler
+    // State to track scroll position and direction
+    const [scrollPosition, setScrollPosition] = useState(0);
+    const [isNavbarVisible, setIsNavbarVisible] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
 
-    const handleScroll = () => {
-        if (window.scrollY > 0) {
-            setIsScrolled(true);
-        } else {
-            setIsScrolled(false);
-        }
-    };
-
     useEffect(() => {
+        let lastScrollY = window.scrollY; // Track the last scroll position
+
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+
+            // Check if we've scrolled down by 100px or more
+            if (currentScrollY > 100) {
+                setIsScrolled(true); // Set the scrolled state
+            } else {
+                setIsScrolled(false); // Reset if less than 100px
+            }
+
+            // Check if the user is scrolling up or down
+            if (currentScrollY < lastScrollY) {
+                // User is scrolling up, show navbar
+                setIsNavbarVisible(true);
+            } else setIsNavbarVisible(false);
+
+            lastScrollY = currentScrollY; // Update the last scroll position
+            setScrollPosition(currentScrollY);
+        };
+
+        // Listen to scroll events
         window.addEventListener('scroll', handleScroll);
 
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, [location]);
+    }, []);
 
     return (
         <div
-            className={`${styles.navbar} ${isHomePage ? styles.homePage : ''} ${isScrolled ? styles.scrolled : ''}`}
+            className={`${styles.navbar} 
+                ${isHomePage ? styles.homePage : ''} 
+                ${isNavbarVisible ? styles.visible : styles.hidden} 
+                ${isScrolled ? styles.scrolled : ''}`}
         >
+            <div className={styles.offerBanner}>
+                <OfferBanner />
+            </div>
+
             <div className={styles.navContainer}>
-                <button className={styles.hamburgerIcon} onClick={toggleMobileMenu}>
-                    &#9776;
-                </button>
+                <button className={styles.hamburgerIcon}>&#9776;</button>
                 <Link to="/home">
                     <img id={styles.logoImg} src={logo} alt="P&S Creations logo" />
                 </Link>
-                <ul className={`${styles.navMenu} ${isMobileMenuOpen ? styles.open : ''}`}>
+                <ul className={styles.navMenu}>
                     <li>
                         <Link className={styles.navBtn} to="/about">
                             ABOUT
@@ -82,7 +99,6 @@ const Header = () => {
                             </li>
                         </ul>
                     </li>
-
                     <li>
                         <Link className={styles.navBtn} to="/contact">
                             CONTACT
