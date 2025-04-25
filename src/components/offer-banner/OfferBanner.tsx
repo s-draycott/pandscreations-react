@@ -45,7 +45,7 @@ const OfferBanner = () => {
             {/* Check if offer is not null and map over the array */}
             {offer.map((o) => (
                 <p key={o.id}>
-                    {o.message} <strong className={styles.code}>{o.code}</strong>!
+                    {o.message} <strong className={styles.code}>{o.code}</strong>
                     <br />
                 </p>
             ))}

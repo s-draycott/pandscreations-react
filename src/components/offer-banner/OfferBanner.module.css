@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Palanquin&display=swap");
 .offerBanner {
-  background-color: #3a2b1f;
+  background-color: rgb(75, 55, 40);
   font-family: "Cormorant", serif;
   font-size: 1.2rem;
   color: white;

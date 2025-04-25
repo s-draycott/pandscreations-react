@@ -1,7 +1,7 @@
 @import "../../stylesheets/Variables.scss";
 
 .offerBanner {
-    background-color: darken($brownColor, 5%);
+    background-color: $brownColor;
     font-family: $headingFont;
     font-size: 1.2rem;
     color: $whiteColor;

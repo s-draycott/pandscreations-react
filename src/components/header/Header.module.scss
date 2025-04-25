@@ -1,17 +1,19 @@
 @import "../../stylesheets/Variables.scss";
+
 .offerBanner {
     width: 100%;
 }
+
 .navbar {
     display: flex;
     justify-content: center;
-    position: relative;
+    position: sticky;
     top: 0px;
     background-color: $brownColor;
-    height: 20%;
+    height: auto;
     width: 100%;
     z-index: 10;
-    transition: background-color 0.5s ease, box-shadow 0.3s ease, position 0.5s ease;
+    transition: opacity 1s ease, transform 0.4s ease, background-color 0.5s ease, box-shadow 0.3s ease;
     flex-wrap: wrap;
 
     @media (max-width: $tablet) {
@@ -44,10 +46,14 @@
     }
 
     &.visible {
-        position: sticky;
+        opacity: 1;
+        transform: translateY(0);
     }
 
-
+    &.hidden {
+        opacity: 1;
+        transform: translateY(-100%);
+    }
 }
 
 .navContainer {
@@ -84,8 +90,7 @@
     @media (max-width: $tablet) {
         opacity: 1;
         visibility: visible;
-        background-color: $brownColor;
-            
+        background-color: $brownColor;     
     }
 }
 

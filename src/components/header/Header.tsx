@@ -12,39 +12,43 @@ const Header = () => {
     const isHomePage = location.pathname === '/' || location.pathname === '/home';
 
     // State to track scroll position and direction
-    const [scrollPosition, setScrollPosition] = useState(0);
-    const [isNavbarVisible, setIsNavbarVisible] = useState(false);
+
+    const [isNavbarVisible, setIsNavbarVisible] = useState(true);
     const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
-        let lastScrollY = window.scrollY; // Track the last scroll position
+        let lastScrollY = window.scrollY;
+        let accumulatedUp = 0;
+        let accumulatedDown = 0;
 
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
+            const diff = currentScrollY - lastScrollY;
 
-            // Check if we've scrolled down by 100px or more
-            if (currentScrollY > 100) {
-                setIsScrolled(true); // Set the scrolled state
-            } else {
-                setIsScrolled(false); // Reset if less than 100px
+            if (diff > 0) {
+                // Scrolling down
+                accumulatedDown += diff;
+                accumulatedUp = 0;
+
+                if (accumulatedDown > 200) {
+                    setIsNavbarVisible(false);
+                }
+            } else if (diff < 0) {
+                // Scrolling up
+                accumulatedUp += Math.abs(diff);
+                accumulatedDown = 0;
+
+                if (accumulatedUp > 150) {
+                    setIsNavbarVisible(true);
+                }
             }
 
-            // Check if the user is scrolling up or down
-            if (currentScrollY < lastScrollY) {
-                // User is scrolling up, show navbar
-                setIsNavbarVisible(true);
-            } else setIsNavbarVisible(false);
-
-            lastScrollY = currentScrollY; // Update the last scroll position
-            setScrollPosition(currentScrollY);
+            setIsScrolled(currentScrollY > 100); // still true after 100px
+            lastScrollY = currentScrollY;
         };
 
-        // Listen to scroll events
         window.addEventListener('scroll', handleScroll);
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
     return (
@@ -75,7 +79,9 @@ const Header = () => {
                         </Link>
                     </li>
                     <li className={styles.dropdown}>
-                        <span className={styles.navBtn}>PRODUCTS</span>
+                        <Link className={styles.navBtn} to="/products">
+                            PRODUCTS
+                        </Link>
                         <ul className={styles.dropdownMenu}>
                             <li>
                                 <Link className={styles.navBtn} to="/products">
