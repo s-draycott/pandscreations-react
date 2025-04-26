@@ -7,12 +7,12 @@ import styles from './OfferBanner.module.css';
 
 const OfferBanner = () => {
     const [offer, setOffer] = useState<Offer[] | null>(null);
-    const now = new Date().toISOString(); // Get the current date in ISO format
-    console.log('Current time (ISO format):', now);
 
     useEffect(() => {
         // Fetch active offers that are currently valid (within start and end date)
         const fetchOffer = async () => {
+            const now = new Date().toISOString();
+
             const { data, error } = await supabase
                 .from('offers')
                 .select('*')
