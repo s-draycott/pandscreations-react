@@ -28,8 +28,8 @@ const Footer = () => {
                     </a>
                 </p>
                 <p>
-                    <a href="/noPage" className={styles.para}>
-                        Terms & Conditions
+                    <a href="/terms" className={styles.para}>
+                        Terms of Service
                     </a>
                 </p>
                 <p>

@@ -17,7 +17,7 @@
     flex-wrap: wrap;
 
     @media (max-width: $tablet) {
-        height: 90px;
+        height: 140px;
     }
 
     &.homePage {
@@ -154,7 +154,7 @@
     color: $whiteColor;
     cursor: pointer;
     position: absolute;
-    top: 20px;
+    top: 60px;
     left: 20px;
     @media (max-width: $tablet) {
         display: block;

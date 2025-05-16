@@ -65,7 +65,7 @@ export default function About() {
                     </div>
                     <p className={styles.aboutText}>
                         Pete is a third generation farmer and has spent his life running our family
-                        farm in the heart Leicestershire. Over the years, Pete has not only
+                        farm in the heart of Leicestershire. Over the years, Pete has not only
                         maintained but built upon the legacy left by his father and
                         grandfather—raising high-quality cattle and growing crops with the same
                         skill and dedication that’s been passed down through generations.

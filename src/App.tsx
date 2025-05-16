@@ -9,6 +9,7 @@ import Home from './pages/home/Home';
 import NoPage from './pages/NoPage';
 import ProductDetail from './pages/product-detail/ProductDetail';
 import Products from './pages/products/Products';
+import Terms from './pages/terms-of-service/TermsOfService';
 
 import './stylesheets/global.css';
 
@@ -38,6 +39,7 @@ function App() {
                         <Route path="/products/category/:category" element={<Products />} />
                         <Route path="/products/:id" element={<ProductDetail />} />
                         <Route path="/contact" element={<Contact />} />
+                        <Route path="/terms" element={<Terms />} />
                         <Route path="*" element={<NoPage />} />
                     </Routes>
                 </BrowserRouter>

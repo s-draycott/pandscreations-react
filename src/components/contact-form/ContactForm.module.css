@@ -14,6 +14,11 @@
   text-align: center;
   line-height: 2rem;
 }
+@media (max-width: 768px) {
+  .para {
+    width: 90%;
+  }
+}
 
 .formContainer {
   display: flex;
@@ -43,6 +48,11 @@
   font-family: "Cormorant", serif;
   box-shadow: 1px 1px 5px rgb(221, 215, 205);
   border: 1px solid rgb(226, 197, 174);
+}
+@media (max-width: 768px) {
+  .formInput {
+    width: 100%;
+  }
 }
 
 .formBtn {

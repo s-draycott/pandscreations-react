@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { FaBars, FaTimes } from 'react-icons/fa';
 import { useLocation, Link } from 'react-router-dom';
 
 const logo = '/assets/white-transparent-03.png';
@@ -10,6 +11,12 @@ import styles from './Header.module.css';
 const Header = () => {
     const location = useLocation();
     const isHomePage = location.pathname === '/' || location.pathname === '/home';
+
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsMenuOpen((prev) => !prev);
+    };
 
     // State to track scroll position and direction
 
@@ -63,11 +70,13 @@ const Header = () => {
             </div>
 
             <div className={styles.navContainer}>
-                <button className={styles.hamburgerIcon}>&#9776;</button>
+                <button className={styles.hamburgerIcon} onClick={toggleMenu}>
+                    {isMenuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
+                </button>
                 <Link to="/home">
                     <img id={styles.logoImg} src={logo} alt="P&S Creations logo" />
                 </Link>
-                <ul className={styles.navMenu}>
+                <ul className={`${styles.navMenu} ${isMenuOpen ? styles.open : ''}`}>
                     <li>
                         <Link className={styles.navBtn} to="/about">
                             ABOUT

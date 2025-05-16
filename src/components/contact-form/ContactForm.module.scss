@@ -13,6 +13,10 @@
     width: 50%;
     text-align: center;
     line-height: 2rem;
+
+    @media(max-width: $tablet) {
+        width: 90%;
+    }
 }
 
 .formContainer {
@@ -43,6 +47,10 @@
     font-family: $headingFont;
     box-shadow: 1px 1px 5px rgb(221, 215, 205);
     border: 1px solid $brownColorLight;
+
+    @media(max-width: $tablet) {
+       width: 100%;
+    }
 }
 
 .formBtn {
