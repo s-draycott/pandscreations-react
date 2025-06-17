@@ -28,30 +28,30 @@ app.get('/api', (_req, res) => {
   res.json({ message: 'Hello from the woodworking backend!' });
 });
 
-// Fetch hero image URL from Supabase
-app.get('/api/hero-image', async (_req, res) => {
+// Fetch all site images
+app.get('/api/images', async (_req, res) => {
   try {
     const { data, error } = await supabase
       .from('site_images')
-      .select('image_url')
-      .eq('name', 'hero_banner')
-      .maybeSingle();
+      .select('name, image_url');
 
     if (error) {
-      console.error('Supabase query error:', error);
+      console.error('Supabase error:', error);
       return res.status(500).json({ error: 'Database query error' });
     }
 
-    if (!data) {
-      return res.status(404).json({ error: 'Hero image not found' });
-    }
+    const imagesMap = data.reduce((acc, item) => {
+      acc[item.name] = item.image_url;
+      return acc;
+    }, {} as Record<string, string>);
 
-    res.json({ url: data.image_url });
+    res.json(imagesMap);
   } catch (err) {
-    console.error('Unexpected error fetching hero image:', err);
-    res.status(500).json({ error: 'Failed to fetch hero image' });
+    console.error('Unexpected error:', err);
+    res.status(500).json({ error: 'Failed to fetch images' });
   }
 });
+
 
 // Additional routes can go here...
 

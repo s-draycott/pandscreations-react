@@ -4,12 +4,17 @@ import Footer from '../../components/footer/Footer';
 import Header from '../../components/header/Header';
 import HeroBanner from '../../components/hero-banner/HeroBanner';
 import ProductScroll from '../../components/product-scroll/ProductScroll';
-
-const aboutBannerImg = '/assets/graduation.jpg';
+import { useSiteImages } from '../../context/SiteImagesContext';
 
 import styles from './Home.module.css';
 
 export default function Home() {
+    const { images, loading } = useSiteImages();
+    const aboutImgUrl = images['graduation'];
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
     return (
         <div className="pageWrapper">
             <Header />
@@ -19,7 +24,7 @@ export default function Home() {
                     <ProductScroll />
                 </div>
                 <AboutBanner
-                    mediaSrc={aboutBannerImg}
+                    mediaSrc={aboutImgUrl}
                     mediaType="image"
                     heading="About P&S Creations"
                     text="  At P&S Creations, father-daughter duo Pete and Sally
