@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 
 import About from './pages/about/About';
 import Contact from './pages/contact/Contact';
-import Gallery from './pages/Gallery';
+import Gallery from './pages/gallery/Gallery';
 import Home from './pages/home/Home';
 import NoPage from './pages/NoPage';
 import ProductDetail from './pages/product-detail/ProductDetail';

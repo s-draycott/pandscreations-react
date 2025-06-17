@@ -69,7 +69,8 @@ export default function About() {
                         maintained but built upon the legacy left by his father and
                         grandfather—raising high-quality cattle and growing crops with the same
                         skill and dedication that’s been passed down through generations.
-                        <br /> <br />
+                    </p>
+                    <p className={styles.aboutText}>
                         Farming is more than just a job for Pete, it’s a way of life. With a natural
                         flair for engineering, he’s our go-to person when something breaks down or
                         needs building. Whether it’s welding up machinery, sorting the electrics,

@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",                         // Modern JS target
+    "module": "CommonJS",                       // Required for Node.js (default in older Node)
+    "lib": ["ES2020"],                          // Match modern runtime features
+    "rootDir": "./src",                         // Your source files live here
+    "outDir": "./dist",                         // Compiled JS goes here
+    "moduleResolution": "node",                 // Resolve like Node.js
+    "esModuleInterop": true,                    // Enables `import express from 'express'`
+    "resolveJsonModule": true,                  // Allows importing JSON
+    "strict": true,                             // Strict type checking
+    "skipLibCheck": true,                       // Skip `.d.ts` file checks
+    "forceConsistentCasingInFileNames": true,   // Enforce case sensitivity
+    "typeRoots": ["./node_modules/@types"],     // Include all installed types
+    "allowSyntheticDefaultImports": true        // Allow default imports from CJS modules
+  },
+  "include": ["src/**/*"],                      // Include all TS files in src/
+  "exclude": ["node_modules", "dist"]           // Ignore these folders
+}

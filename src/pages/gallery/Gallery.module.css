@@ -6,15 +6,4 @@
   letter-spacing: 0.4rem;
   text-align: center;
   margin: 80px auto 80px auto;
-}
-
-.productGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 15px;
-  margin: 0 auto;
-  justify-items: center;
-  grid-auto-rows: auto;
-  /* Ensure a max of 4 columns */
-  max-width: 1690px;
-}/*# sourceMappingURL=Products.module.css.map */
+}/*# sourceMappingURL=Gallery.module.css.map */
