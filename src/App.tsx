@@ -34,7 +34,16 @@ function App() {
                         <Route index element={<Home />} />
                         <Route path="/home" element={<Home />} />
                         <Route path="/about" element={<About />} />
-                        <Route path="/gallery" element={<Gallery />} />
+                        <Route path="/gallery" element={<Gallery table="gallery_images" />} />
+                        <Route
+                            path="/gallery/bespoke"
+                            element={<Gallery table="gallery_images" title="Bespoke Projects" />}
+                        />
+                        <Route
+                            path="/gallery/frames"
+                            element={<Gallery table="photo_frame_gallery" title="Photo Frames" />}
+                        />
+
                         <Route path="/products" element={<Products />} />
                         <Route path="/products/category/:category" element={<Products />} />
                         <Route path="/products/:id" element={<ProductDetail />} />

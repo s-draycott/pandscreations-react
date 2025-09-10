@@ -82,11 +82,24 @@ const Header = () => {
                             ABOUT
                         </Link>
                     </li>
-                    <li>
+                    <li className={styles.dropdown}>
                         <Link className={styles.navBtn} to="/gallery">
                             GALLERY
                         </Link>
+                        <ul className={styles.dropdownMenu}>
+                            <li>
+                                <Link className={styles.navBtn} to="/gallery/bespoke">
+                                    Bespoke Projects
+                                </Link>
+                            </li>
+                            <li>
+                                <Link className={styles.navBtn} to="/gallery/frames">
+                                    Photo Frames
+                                </Link>
+                            </li>
+                        </ul>
                     </li>
+
                     <li className={styles.dropdown}>
                         <Link className={styles.navBtn} to="/products">
                             PRODUCTS

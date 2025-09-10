@@ -1,7 +1,7 @@
 /* GalleryComponent.module.css */
 .gallery {
   display: flex;
-  margin-left: -10px;
+  margin: 10px 80px 10px 80px;
   width: auto;
 }
 
@@ -14,10 +14,4 @@
   width: 100%;
   display: block;
   margin-bottom: 10px;
-}
-
-.caption {
-  font-size: 0.9rem;
-  margin-top: 4px;
-  text-align: center;
 }/*# sourceMappingURL=GalleryComponent.module.css.map */

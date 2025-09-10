@@ -66,6 +66,8 @@ const Gallery = ({ table, orderColumn }: GalleryProps) => {
                         src={item.image_url}
                         alt={item.title || 'Gallery'}
                         className={styles.image}
+                        loading="lazy"
+                        style={{ backgroundColor: '#f0f0f0' }}
                     />
                 </div>
             ))}

@@ -36,11 +36,15 @@ export default function Products() {
         }
     }, []);
 
+    const sentenceCase = (str: string) => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+
     return (
         <div className={`pageWrapper ${styles.pageWrapper}`}>
             <Header />
             <div className={`mainContent ${styles.mainContent}`}>
-                <h2 className={styles.heading}>{category ? category.toUpperCase() : 'PRODUCTS'}</h2>
+                <h2 className={styles.heading}>
+                    {category ? sentenceCase(category) : 'All Products'}
+                </h2>
 
                 {filteredProducts.length === 0 ? (
                     <p>No products available in this category.</p>
