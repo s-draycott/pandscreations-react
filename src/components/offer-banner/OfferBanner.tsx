@@ -33,7 +33,7 @@ const OfferBanner = () => {
         fetchOffer();
     }, []);
 
-    if (!offer)
+    if (!offer || offer.length === 0)
         return (
             <div className={styles.offerBanner}>
                 <p>WELCOME! Discover our latest products and enjoy exclusive deals coming soon!</p>
@@ -42,10 +42,9 @@ const OfferBanner = () => {
 
     return (
         <div className={styles.offerBanner}>
-            {/* Check if offer is not null and map over the array */}
             {offer.map((o) => (
                 <p key={o.id}>
-                    {o.message} <strong className={styles.code}>{o.code}</strong>
+                    {o.message} <strong className={styles.code}>'{o.code}'</strong>
                     <br />
                 </p>
             ))}

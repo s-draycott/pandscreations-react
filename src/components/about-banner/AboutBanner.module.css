@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Palanquin&display=swap");
+@font-face {
+  font-family: "Handwriting";
+  src: url("../../public/assets/fonts/Handwriting1-Regular.ttf") format("truetype");
+}
 .aboutContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -63,4 +67,12 @@
 .bannerVideo {
   width: 500px;
   position: relative;
+}
+
+.thankYou {
+  font-family: "Handwriting", sans-serif;
+  font-size: 4rem;
+  font-weight: 500;
+  letter-spacing: -4px;
+  text-align: center;
 }/*# sourceMappingURL=AboutBanner.module.css.map */

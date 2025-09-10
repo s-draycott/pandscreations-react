@@ -7,7 +7,7 @@ const HeroBanner = () => {
     const heroImageUrl = images['hero_banner'];
 
     if (loading) {
-        return <div>Loading hero banner...</div>;
+        return <div>Loading...</div>;
     }
 
     return (
@@ -16,7 +16,7 @@ const HeroBanner = () => {
             style={{
                 backgroundImage: heroImageUrl ? `url(${heroImageUrl})` : 'none',
                 backgroundSize: 'cover',
-                backgroundPosition: 'center',
+                backgroundPosition: 'top',
             }}
         >
             <div className={styles.heroTextContainer}>

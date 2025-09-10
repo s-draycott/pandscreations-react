@@ -1,14 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Palanquin&display=swap");
+@font-face {
+  font-family: "Handwriting";
+  src: url("../../public/assets/fonts/Handwriting1-Regular.ttf") format("truetype");
+}
 .offerBanner {
   background-color: rgb(75, 55, 40);
   font-family: "Cormorant", serif;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: white;
-  height: 50px;
-  padding: 10px 20px;
+  height: 40px;
+  padding: 10px;
   text-align: center;
-  font-weight: 600;
+  font-weight: 400;
   position: sticky;
   top: 0;
   z-index: 1000;

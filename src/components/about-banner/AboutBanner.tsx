@@ -1,9 +1,10 @@
-import styles from "./AboutBanner.module.css";
+import styles from './AboutBanner.module.css';
 type AboutBannerProps = {
     mediaSrc: string;
-    mediaType?: "image" | "video";
+    mediaType?: 'image' | 'video';
     heading: string;
     text: string;
+    thankYouMessage?: string;
     poster?: string;
 };
 
@@ -12,12 +13,13 @@ const AboutBanner = ({
     mediaType,
     heading,
     text,
+    thankYouMessage,
     poster,
 }: AboutBannerProps) => {
     return (
         <div className={styles.aboutContainer}>
             <div className={styles.imgContainer}>
-                {mediaType === "video" ? (
+                {mediaType === 'video' ? (
                     <div className={styles.videoContainer}>
                         <video
                             className={styles.bannerVideo}
@@ -30,16 +32,13 @@ const AboutBanner = ({
                         />
                     </div>
                 ) : (
-                    <img
-                        className={styles.bannerImg}
-                        src={mediaSrc}
-                        alt={heading}
-                    />
+                    <img className={styles.bannerImg} src={mediaSrc} alt={heading} />
                 )}
             </div>
             <div className={styles.textContainer}>
                 <p className={styles.aboutHeading}>{heading}</p>
                 <p className={styles.aboutPara}>{text}</p>
+                <p className={styles.thankYou}>{thankYouMessage}</p>
             </div>
         </div>
     );

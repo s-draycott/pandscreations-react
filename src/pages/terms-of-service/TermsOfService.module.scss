@@ -1,4 +1,4 @@
-@import "../../stylesheets/Variables.scss";
+@use "../../stylesheets/Variables.scss" as vars;
 
 .mainContent{
     display: flex;
@@ -11,24 +11,24 @@
 .termsContainer {
     width: 40%;
 
-    @media (max-width: $tablet) {
+    @media (max-width: vars.$tablet) {
         width: 80%;
     }
 }
 
 .heading {
-    font-family: $headingFont;
+    font-family: vars.$headingFont;
     font-size: 2.5rem;
-    color: $brownColor;
+    color: vars.$brownColor;
 }
 
 .subHeading {
-    font-family: $headingFont;
+    font-family: vars.$headingFont;
     font-size: 1.5rem;
-    color: $brownColor;
+    color: vars.$brownColor;
 }
 
 .mainText {
-    font-family: $headingFont;
+    font-family: vars.$headingFont;
     font-size: 1rem;
 }

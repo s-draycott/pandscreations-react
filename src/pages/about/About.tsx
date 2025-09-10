@@ -20,7 +20,7 @@ export default function About() {
                     mediaSrc={aboutBannerImg}
                     mediaType="image"
                     heading="About P&S Creations"
-                    text="  At P&S Creations, father-daughter duo Pete and Sally
+                    text="At P&S Creations, father-daughter duo Pete and Sally
                         join forces to craft high-quality, handmade wooden
                         products with a personal touch. Our mission is to create
                         bespoke pieces that tell a story and reflect the beauty
@@ -30,6 +30,7 @@ export default function About() {
                         sustainability ensures that every creation not only has
                         its own unique charm but also honours the natural world
                         from which it was made and inspired."
+                    thankYouMessage="Thanks from Sally and Pete"
                 />
                 <div className={`${styles.aboutContainer} ${styles.one}`}>
                     <div className={styles.carouselContainerOne}>

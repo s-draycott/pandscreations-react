@@ -1,0 +1,23 @@
+/* GalleryComponent.module.css */
+.gallery {
+    display: flex;
+    margin-left: -10px;
+    width: auto;
+}
+
+.galleryColumn {
+    padding-left: 10px;
+    background-clip: padding-box;
+}
+
+.image {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.caption {
+    font-size: 0.9rem;
+    margin-top: 4px;
+    text-align: center;
+}

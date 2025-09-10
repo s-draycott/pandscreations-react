@@ -1,9 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Palanquin&display=swap");
+@font-face {
+  font-family: "Handwriting";
+  src: url("../../public/assets/fonts/Handwriting1-Regular.ttf") format("truetype");
+}
 .heading {
   font-family: "Cormorant", serif;
   font-size: 3rem;
-  letter-spacing: 0.4rem;
+  letter-spacing: 1rem;
   text-align: center;
-  margin: 80px auto 80px auto;
+  margin: 80px auto 20px auto;
 }/*# sourceMappingURL=Gallery.module.css.map */

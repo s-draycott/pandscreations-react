@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Palanquin&display=swap");
+@font-face {
+  font-family: "Handwriting";
+  src: url("../../public/assets/fonts/Handwriting1-Regular.ttf") format("truetype");
+}
 .carousel {
   display: flex;
   justify-content: center;

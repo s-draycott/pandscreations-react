@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Palanquin&display=swap");
+@font-face {
+  font-family: "Handwriting";
+  src: url("../../public/assets/fonts/Handwriting1-Regular.ttf") format("truetype");
+}
 .offerBanner {
   width: 100%;
 }
@@ -66,8 +70,7 @@
   display: flex;
   align-items: center;
   margin: 0px;
-  padding: 5px;
-  gap: 100px;
+  gap: 50px;
   list-style: none;
   transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.3s ease;
 }
@@ -96,7 +99,7 @@
   text-decoration: none;
   letter-spacing: 2px;
   font-family: "Cormorant", serif;
-  font-size: larger;
+  font-size: clamp(0.7rem, 1vw, 1.2rem);
   padding: 5px;
   position: relative;
   display: inline-block;
@@ -109,7 +112,7 @@
     display: block;
   }
   .navBtn:active {
-    background-color: #2a1f16;
+    background-color: rgb(41.7391304348, 30.6086956522, 22.2608695652);
     transform: scale(0.98);
   }
 }
@@ -132,7 +135,7 @@
 }
 
 #logoImg {
-  width: 250px;
+  width: 180px;
   padding: 10px;
 }
 @media (max-width: 768px) {
