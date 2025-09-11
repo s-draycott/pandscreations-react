@@ -37,7 +37,7 @@ function App() {
                         <Route path="/gallery" element={<Gallery table="gallery_images" />} />
                         <Route
                             path="/gallery/bespoke"
-                            element={<Gallery table="gallery_images" title="Bespoke Projects" />}
+                            element={<Gallery table="bespoke_gallery" title="Bespoke Projects" />}
                         />
                         <Route
                             path="/gallery/frames"
