@@ -1,12 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Palanquin&display=swap");
+@font-face {
+  font-family: "Handwriting";
+  src: url("../../public/assets/fonts/Handwriting1-Regular.ttf") format("truetype");
+}
 .heroContainer {
   position: relative;
-  margin-top: -210px;
+  margin-top: -220px;
   width: 100%;
   height: 900px;
   background-repeat: no-repeat;
-  background-size: cover;
   z-index: 0;
 }
 @media (max-width: 768px) {
@@ -39,7 +42,7 @@
 .heroPara {
   color: white;
   font-family: "Cormorant", serif;
-  font-size: 48px;
+  font-size: 58px;
   text-align: left;
 }
 @media (max-width: 768px) {
@@ -48,6 +51,12 @@
     color: rgb(75, 55, 40);
     text-align: center;
   }
+}
+
+.heroParaTwo {
+  font-size: 22px;
+  letter-spacing: 0.3rem;
+  font-weight: 500;
 }
 
 .heroBtn {

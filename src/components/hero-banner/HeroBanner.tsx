@@ -24,6 +24,9 @@ const HeroBanner = () => {
                     Handcrafted Wooden Gifts and <br />
                     Country-Inspired Artwork
                 </p>
+                <p className={`${styles.heroPara} ${styles.heroParaTwo}`}>
+                    MADE ON OUR FAMILY FARM IN LEICESTERSHIRE
+                </p>
                 <button className={styles.heroBtn}>EXPLORE PRODUCTS</button>
             </div>
         </div>

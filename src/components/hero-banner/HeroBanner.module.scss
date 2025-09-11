@@ -1,15 +1,15 @@
-@use "../../stylesheets/Variables.scss";
+@use "../../stylesheets/Variables.scss" as vars;
 
 .heroContainer {
     position: relative;
     margin-top: -220px;
     width: 100%;
     height: 900px;
-    // background-image: url(/assets/home-background.jpg);
+
     background-repeat: no-repeat;
     z-index: 0;
 
-    @media (max-width: $tablet) {
+    @media (max-width: vars.$tablet) {
         position: relative;
         width: 100%;
         height: 400px;
@@ -25,7 +25,7 @@
     left: 5%;
     z-index: 1;
 
-    @media (max-width: $tablet) {
+    @media (max-width: vars.$tablet) {
         position: relative;
         left: 0;
         top: 400px;
@@ -36,24 +36,31 @@
 }
 
 .heroPara {
-    color: $whiteColor;
-    font-family: $headingFont;
-    font-size: 48px;
+    color: vars.$whiteColor;
+    font-family: vars.$headingFont;
+    font-size: 58px;
     text-align: left;
 
-    @media (max-width: $tablet) {
+    @media (max-width: vars.$tablet) {
        font-size: 28px;
-       color: $brownColor;
+       color: vars.$brownColor;
        text-align: center;
     }
 }
 
+.heroParaTwo {
+    font-size: 22px;
+    letter-spacing: 0.3rem;
+    font-weight: 500;
+}
+
+
 .heroBtn {
-    font-family: $headingFont;
+    font-family: vars.$headingFont;
     font-weight: 700;
     letter-spacing: 5px;
-    color: $whiteColor;
-    background-color: $brownColor;
+    color: vars.$whiteColor;
+    background-color: vars.$brownColor;
     border-radius: 60px;
     padding: 10px 20px 10px 20px;
     box-shadow: none;

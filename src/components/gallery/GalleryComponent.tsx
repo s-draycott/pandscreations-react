@@ -17,6 +17,9 @@ type GalleryItem = {
     order: number;
 };
 
+//Use state always returns an array with two values - the first value is going to be the state, the second is the function that allows you to update the state. You can call these whatever you want
+//tha value within the use state is the default value which we set to be an empty array
+
 const Gallery = ({ table, orderColumn }: GalleryProps) => {
     const [images, setImages] = useState<GalleryItem[]>([]);
     const [loading, setLoading] = useState(true);
@@ -25,11 +28,12 @@ const Gallery = ({ table, orderColumn }: GalleryProps) => {
         const fetchImages = async () => {
             setLoading(true);
 
-            let query = supabase.from(table).select('id, image_url, title, order');
+            let query = supabase.from(table).select('id, image_url, title, order').limit(1000);
             if (orderColumn) {
-                query = query.order(orderColumn, { ascending: true });
+                query = query.order(orderColumn, { ascending: false });
             }
 
+            //this is the execution of the query - it returns an object of data(the rows from the database) and error
             const { data, error } = await query;
 
             if (error) {
@@ -37,6 +41,9 @@ const Gallery = ({ table, orderColumn }: GalleryProps) => {
                 setLoading(false);
                 return;
             }
+
+            console.log('Supabase data:', data);
+            console.log('Number of images:', data?.length);
 
             setImages(data || []);
             setLoading(false);
