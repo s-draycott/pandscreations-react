@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Palanquin&display=swap");
 @font-face {
   font-family: "Handwriting";
-  src: url("../../public/assets/fonts/Handwriting1-Regular.ttf") format("truetype");
+  src: url("/assets/fonts/Handwriting1-Regular.ttf") format("truetype");
 }
 .wrapper {
   position: relative;
