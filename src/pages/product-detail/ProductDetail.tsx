@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
+import CheckoutButton from '../../components/checkout-button/CheckoutButton';
 import Footer from '../../components/footer/Footer';
 import Header from '../../components/header/Header';
 import ImgCarousel from '../../components/img-carousel/ImgCarousel';
@@ -49,6 +50,7 @@ const ProductDetail = () => {
                     <p className={styles.price}>£{product.price.toFixed(2)}</p>
                     <p className={styles.status}>{product.available ? 'In stock' : 'SOLD OUT'}</p>
                     <p className={styles.description}>{product.description}</p>
+                    <CheckoutButton product={product} />
                 </div>
             </div>
             <Footer />

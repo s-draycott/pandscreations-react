@@ -2,11 +2,15 @@ import { createClient } from '@supabase/supabase-js';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import express from 'express';
+import Stripe from 'stripe';
 
 dotenv.config();
 
 const supabaseUrl = process.env.SUPABASE_URL || '';
 const supabaseKey = process.env.SUPABASE_ANON_KEY || '';
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
+  apiVersion: '2025-08-27.basil'
+})
 
 if (!supabaseUrl || !supabaseKey) {
   console.error('Missing Supabase URL or Anon Key in environment variables');
@@ -62,4 +66,45 @@ app.get('/test', (_req, res) => {
 
 app.listen(PORT, () => {
   console.log(`✅ Server running on port ${PORT}`);
+});
+
+//STRIPE ENDPOINTS
+app.post('/api/create-checkout-session', express.json(), async (req, res) => {
+  const { cartItems } = req.body;
+
+  if (!cartItems || !Array.isArray(cartItems) || cartItems.length === 0) {
+    return res.status(400).json({error: 'Cart is empty or invalid'});
+  }
+
+ try {
+    const lineItems = cartItems.map(item => {
+      if (!item.title || !item.price || !item.quantity) {
+        throw new Error('Invalid cart item');
+      }
+      return {
+        price_data: {
+          currency: 'gbp',
+          product_data: {
+            name: item.title,
+            description: item.description || '',
+          },
+          unit_amount: Math.round(item.price * 100),
+        },
+        quantity: item.quantity,
+      };
+    });
+
+    const session = await stripe.checkout.sessions.create({
+      payment_method_types: ['card'],
+      mode: 'payment',
+      line_items: lineItems,
+      success_url: `${process.env.FRONTEND_URL}/checkout-success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${process.env.FRONTEND_URL}/cart`, // redirect back to cart
+    });
+
+    res.json({ id: session.id });
+  } catch (error) {
+    console.error('Stripe error:', error);
+    res.status(500).json({ error: 'Failed to create checkout session' });
+  }
 });

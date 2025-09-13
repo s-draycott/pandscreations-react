@@ -37,10 +37,10 @@ export default function About() {
                         <ImgCarousel data={peteSallySlides} autoSlide={true} />
                     </div>
                     <p className={styles.aboutText}>
-                        Thanks for taking the time to get to know us! I’m Sally and one half of P&S
-                        Creations. Whilst I now run the day-to-day and handle much of the making, it
-                        is my dad, Pete, who has always been the guiding force behind our
-                        craftmanship. I have spent my whole life looking up to him hoping to carry
+                        Thanks for taking the time to get to know us! I’m Sally, one half of P&S
+                        Creations. While I now manage the day-to-day and much of the making, it is
+                        my dad, Pete, who has always been the guiding force behind our
+                        craftsmanship. I've spent my whole life looking up to him hoping to carry
                         forward a fraction of his creativity, ingenuity and skill.
                     </p>
                 </div>
@@ -66,19 +66,19 @@ export default function About() {
                     </div>
                     <p className={styles.aboutText}>
                         Pete is a third generation farmer and has spent his life running our family
-                        farm in the heart of Leicestershire. Over the years, Pete has not only
+                        farm in the heart of Leicestershire. Over the years, Dad has not only
                         maintained but built upon the legacy left by his father and
                         grandfather—raising high-quality cattle and growing crops with the same
                         skill and dedication that’s been passed down through generations.
                     </p>
                     <p className={styles.aboutText}>
-                        Farming is more than just a job for Pete, it’s a way of life. With a natural
-                        flair for engineering, he’s our go-to person when something breaks down or
-                        needs building. Whether it’s welding up machinery, sorting the electrics,
-                        plumbing, fabricating sheds, fixing cars or inventing new tools from
-                        scratch, his practical skills seem to know no limit . His resourcefulness
-                        and quiet ingenuity continue to shape and inspire everything we create at
-                        P&S Creations.
+                        For Dad, as is the case with so many farmers, farming goes beyond a job,
+                        it's a way of life. With a natural flair for engineering, he’s our go-to
+                        person when something breaks down or needs building. Whether it’s welding up
+                        machinery, sorting the electrics, plumbing, fabricating sheds, fixing cars
+                        or inventing new tools from scratch, his practical skills seem to know no
+                        limit . His resourcefulness and quiet ingenuity continue to shape and
+                        inspire everything we create at P&S Creations.
                     </p>
                 </div>
                 <AboutBanner
@@ -101,16 +101,14 @@ export default function About() {
                     </div>
                     <p className={styles.aboutText}>
                         As for me, I’m a scientist by trade and have worked in research for 10 years
-                        completing a PhD in molecular biology. My scientific background has shaped
-                        my approach to problem-solving and attention to detail, but I have always
-                        had a strong creative side. After spending years in research labs in
-                        Nottingham, Adelaide, and Oxford, I’ve decided to expand my skills further
-                        and have started retraining as a software developer. This new venture allows
-                        me to combine my analytical mindset with my creative passions, adding a new
-                        dimension to the work we do. Together, my scientific, artistic and technical
-                        skills alongside dads craftmanship, ingenuity and engineering genius, allow
-                        us to create unique, well-thought-out pieces that reflect both our heritage
-                        and innovative spirit.
+                        completing a PhD in molecular biology. After spending years in research labs
+                        in Nottingham, Adelaide, and Oxford, I’ve decided to expand my skills
+                        further and have started retraining in software development. Whilst our jobs
+                        seem quite different, there is so much Dad and I have in common. We share a
+                        passion for learning new skills, solving practical problems and building
+                        things from scratch. That shared curiosity and drive are what fuel P&S
+                        Creations, and it’s what makes the process as rewarding for us as the
+                        finished pieces are for those who take them home.
                     </p>
                 </div>
             </div>
