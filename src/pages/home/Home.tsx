@@ -37,6 +37,9 @@ export default function Home() {
                         sustainability ensures that every creation not only has
                         its own unique charm but also honours the natural world
                         from which it was made and inspired."
+                    thankYouMessage="Thanks from Sally and Pete"
+                    moreBtn="FIND OUT MORE"
+                    moreBtnLink="/about"
                 />
                 <ContactForm />
             </div>
