@@ -4,7 +4,7 @@ import Header from '../../components/header/Header';
 import ImgCarousel from '../../components/img-carousel/ImgCarousel';
 import { peteSallySlides, peteSolo, sallySolo } from '../../data/ImageCarouselData.json';
 
-import styles from './About.module.css';
+import styles from './About.module.scss';
 
 const aboutBannerImg = '/assets/graduation.jpg';
 const bannerImg = '/assets/planer-together.jpg';

@@ -1,14 +1,14 @@
-@import "../../stylesheets/Variables.scss";
+@use "../../stylesheets/Variables.scss" as vars;
 
 .aboutContainer{
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
     padding: 50px;
-    background-color: $brownColorLight;
+    background-color: vars.$brownColorLight;
     gap: 20px;
 
-    @media (max-width: $tablet) {
+    @media (max-width: vars.$tablet) {
         display: flex;
         flex-direction: column-reverse;
         align-items: center;
@@ -24,22 +24,22 @@
 
 .textContainer{
     background-color: white;
-    color: $brownColor;
+    color: vars.$brownColor;
     padding: 40px;
     width: auto;
     margin-left: -120px;
     z-index: 5;
 
-    @media(min-width: $desktop) {
+    @media(min-width: vars.$desktop) {
         width: 35vw;
     }
 
-    @media (max-width: $tablet) {
-      margin: 0px;
+    @media (max-width: vars.$tablet) {
+      margin: 10px;
     }
 }
 .aboutHeading {
-    font-family: $headingFont;
+    font-family: vars.$headingFont;
     font-size: 2rem;
     text-align: left;
 
@@ -48,7 +48,7 @@
 .aboutPara{
     text-align: left;
     padding: 10px;
-    font-family: $headingFont;
+    font-family: vars.$headingFont;
     line-height: 1.8;
     font-size: 1.3rem;
 }
@@ -64,7 +64,7 @@
 }
 
 .thankYou {
-    font-family: $handwriting;
+    font-family: vars.$handwriting;
     font-size: 4rem;
     font-weight: 500;
     letter-spacing: -4px;

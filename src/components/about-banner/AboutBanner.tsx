@@ -1,4 +1,4 @@
-import styles from './AboutBanner.module.css';
+import styles from './AboutBanner.module.scss';
 type AboutBannerProps = {
     mediaSrc: string;
     mediaType?: 'image' | 'video';
