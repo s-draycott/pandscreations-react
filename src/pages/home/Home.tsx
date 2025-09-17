@@ -6,7 +6,7 @@ import HeroBanner from '../../components/hero-banner/HeroBanner';
 import ProductScroll from '../../components/product-scroll/ProductScroll';
 import { useSiteImages } from '../../context/SiteImagesContext';
 
-import styles from './Home.module.css';
+import styles from './Home.module.scss';
 
 export default function Home() {
     const { images, loading } = useSiteImages();

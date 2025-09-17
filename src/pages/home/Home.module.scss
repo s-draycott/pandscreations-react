@@ -10,3 +10,9 @@
 //     color: $brownColor;
 //     letter-spacing: 10px;
 // }
+
+.productScroll {
+    @media(max-width: $tablet) {
+        margin-top: 400px;
+    }
+}
