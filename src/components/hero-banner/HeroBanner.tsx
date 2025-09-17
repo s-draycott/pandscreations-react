@@ -18,7 +18,7 @@ const HeroBanner = () => {
             style={{
                 backgroundImage: heroImageUrl ? `url(${heroImageUrl})` : 'none',
                 backgroundSize: 'cover',
-                backgroundPosition: 'top',
+                backgroundPosition: 'top-left',
             }}
         >
             <div className={styles.heroTextContainer}>

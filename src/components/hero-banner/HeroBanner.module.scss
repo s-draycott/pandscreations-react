@@ -3,15 +3,15 @@
 
 .heroContainer {
     position: relative;
-    margin-top: -220px;
+    margin-top: -300px;
     width: 100%;
-    height: 900px;
+    height: 150vh;
     background-repeat: no-repeat;
     z-index: 0;
 
     @media (max-width: vars.$tablet) {
-        margin-top: 0px;
-        height: 400px;
+        margin-top: -20px;
+        height: 500px;
     }
 }
 
@@ -19,14 +19,13 @@
     display: flex;
     flex-direction: column;
     align-items: start;
-    padding-top: 250px;
+    padding-top: 350px;
     padding-left: 50px;
     z-index: 2;
     width: 100%;
 
     @media (max-width: vars.$tablet) {
-        padding: 10px;
-        margin: 0;
+        padding: 60px 0px;
         display: flex;
         flex-direction: column;
         align-items: center; 
@@ -40,13 +39,13 @@
     color: vars.$whiteColor;
     font-family: vars.$headingFont;
     font-size: clamp(24px, 5vw, 58px);
-    text-align: left;
-    margin: 0 0 10px 0;
     z-index: 2;
 
     @media (max-width: vars.$tablet) {
-        font-size: clamp(1.5rem, 2.5vw, 2rem);
+        font-size: clamp(18px, 6vw, 58px);
         color: vars.$whiteColor;
+        margin: 0px;
+        padding: 0px 20px;
     }
 }
 
@@ -57,12 +56,12 @@
     letter-spacing: 0.3rem;
     font-weight: 500;
     z-index: 2;
-    margin: 0 0 10px 0;
 
     @media (max-width: vars.$tablet) {
-        font-size: clamp(0.8rem, 2.5vw, 2rem);
-            color: vars.$whiteColor;
-            letter-spacing: 0.1rem;
+        font-size: clamp(8px, 14px, 18px);
+        letter-spacing: 0.1rem;
+        width: 100%;
+        padding: 20px 20px;
                   
     }
 }
@@ -91,7 +90,7 @@
     }
 
     @media(max-width: vars.$tablet){
-        margin-top: 200px;
+        margin-top: 160px;
         align-self: center;
     }
 
