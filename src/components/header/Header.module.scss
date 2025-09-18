@@ -12,24 +12,16 @@
     position: sticky;
     top: 0px;
     background-color: vars.$brownColor;
-    height: auto;
+    // height: auto;
     width: 100%;
     z-index: 10;
     transition: opacity 1s ease, transform 0.4s ease, background-color 0.5s ease, box-shadow 0.3s ease;
     flex-wrap: wrap;
 
-    @media (max-width: vars.$tablet) {
-        height: 140px;
-    }
-
     &.homePage {
         background-color: vars.$brownColorTranslucent;
 
         &.scrolled {
-            background-color: vars.$brownColor;
-        }
-
-        @media (max-width: vars.$tablet) {
             background-color: vars.$brownColor;
         }
     }
@@ -61,38 +53,18 @@
 .navContainer {
     display: grid;
     justify-items: center;
-    @media (max-width: vars.$tablet) {
-        flex-direction: column;
-        align-items: center;
-    }
 }
 
 .navMenu{
     display: flex;
+    gap: 50px;
     align-items: center;
     margin: 0px;
-    // padding: 5px;
-    gap: 50px;
     list-style: none;
     transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.3s ease;
 
-    @media (max-width: vars.$tablet) {
-        opacity: 0;
-        visibility: hidden;
-        display: flex;
-        flex-direction: column;
-        width: 100vw;
-        gap: 20px;
-        padding-top: 10px;
-
-    }
-}
-
-.navMenu.open {
-    @media (max-width: vars.$tablet) {
-        opacity: 1;
-        visibility: visible;
-        background-color: vars.$brownColor;     
+    ul {
+        list-style: none;
     }
 }
 
@@ -105,45 +77,28 @@
     padding: 5px;
     position: relative;
     display: inline-block;
-
-    @media (max-width: vars.$tablet) {
-        width: 100vw;
-        text-align: center; 
-        padding: 15px 0; 
-        display: block; 
-
-        &:active {
-            background-color: color.scale(vars.$brownColor, $lightness: -10%);
-            transform: scale(0.98);
-        }
+    
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background-color: vars.$whiteColor;
+        transition: width 0.3s ease, left 0.3s ease;
     }
 
-    @media (min-width: vars.$tablet) {
-        &::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background-color: vars.$whiteColor;
-            transition: width 0.3s ease, left 0.3s ease;
-        }
-    
-        &:hover::after {
-            width: 100%;
-            left: 0;
-            transform: translateX(0);
-        }
+    &:hover::after {
+        width: 100%;
+        left: 0;
+        transform: translateX(0);
     }
 }
 
 #logoImg {
     width: 180px;
     padding: 10px;
-    @media (max-width: vars.$tablet){
-        width: 150px;
-    }
 }
 
 .hamburgerIcon {
@@ -194,6 +149,80 @@
             display: block;
         }
     }
+
+    @media(max-width: vars.$tablet) {
+        position: static;
+        display: flex !important;
+        flex-direction: column;
+            width: 100%;
+            box-shadow: none;
+            padding: 0;
+    }
 }
 
+@media(max-width: vars.$tablet){
+    .navbar{
+        &.homePage {
+            background-color: vars.$brownColor;
+        }
+    }
 
+    .navContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: vars.$brownColor;
+    }
+
+    .navMenu {
+        position: fixed;
+        top: 100px;
+        left: -100%;
+        height: 100%;
+        padding: 4rem 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        transition: left 0.3s ease-in-out;
+        z-index: 15;
+        ul {
+                flex-direction: column;
+                gap: 1rem;
+                width: 80vw;
+        
+                li {        
+                    .dropdownMenu {
+                        display: flex !important;
+                        flex-direction: column;
+                        position: static;
+                        padding: 0;
+        
+                        li {
+                            padding: 0;
+                        }
+                    }
+                }
+            }
+        
+            &.open {
+                left: 0;
+            }
+        }
+
+    .navBtn {
+        width: 100vw;
+        text-align: left;
+        display: block;
+        background-color: vars.$brownColor;
+    
+    }
+
+    #logoImg {
+        width: 150px;
+    }
+
+
+
+
+
+}

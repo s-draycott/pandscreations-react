@@ -47,7 +47,7 @@
 }
 @media (max-width: 768px) {
   .heroPara {
-    font-size: clamp(18px, 6vw, 58px);
+    font-size: clamp(24px, 6vw, 58px);
     color: white;
     margin: 0px;
     padding: 0px 20px;

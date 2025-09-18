@@ -5,7 +5,7 @@ import products from '../../data/products.json';
 import { Product } from '../../types/products';
 import ProductCard from '../product-card/ProductCard';
 
-import styles from './ProductScroll.module.css';
+import styles from './ProductScroll.module.scss';
 
 const ProductScroll: React.FC = () => {
     const availableProducts = (products as Product[]).filter((p) => p.available);

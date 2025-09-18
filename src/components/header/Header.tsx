@@ -6,7 +6,7 @@ const logo = '/assets/white-transparent-03.png';
 
 import OfferBanner from '../offer-banner/OfferBanner';
 
-import styles from './Header.module.scss';
+import styles from './Header.module.css';
 
 const Header = () => {
     const location = useLocation();
