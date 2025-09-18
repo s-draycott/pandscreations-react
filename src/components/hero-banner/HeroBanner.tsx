@@ -1,6 +1,5 @@
-import { Link } from 'react-router-dom';
-
 import { useSiteImages } from '../../context/SiteImagesContext';
+import Btn from '../button/Button';
 
 import styles from './HeroBanner.module.scss';
 
@@ -27,9 +26,9 @@ const HeroBanner = () => {
                     Country-Inspired Artwork
                 </p>
                 <p className={styles.heroParaTwo}>MADE ON OUR FAMILY FARM IN LEICESTERSHIRE</p>
-                <Link to="/products" className={styles.heroBtn}>
+                <Btn to="/products" variant="primary" className={styles.heroBtn}>
                     EXPLORE PRODUCTS
-                </Link>
+                </Btn>
             </div>
         </div>
     );

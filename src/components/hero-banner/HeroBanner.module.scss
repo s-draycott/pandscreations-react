@@ -67,33 +67,10 @@
 }
 
 .heroBtn {
-    font-family: vars.$headingFont;
-    font-size: clamp(14px, 2.5vw, 18px);
-    letter-spacing: 5px;
-    text-decoration: none;
-    color: vars.$whiteColor;
-    background-color: vars.$brownColor;
-    border-radius: 60px;
-    margin-top: 20px;
-    padding: 10px 30px;
-    box-shadow: none;
-    border: none;
-    transition: 0.3s ease-in-out;
-        z-index: 2;
-
-    &:hover {
-        transform: scale(1.08);  
+    @media (max-width: vars.$tablet) {
+        margin-top: 160px; // only adjust the top margin on mobile
     }
-
-    &:active {
-        background-color: color.scale(vars.$brownColor, $lightness: -10%);
-    }
-
-    @media(max-width: vars.$tablet){
-        margin-top: 160px;
-        align-self: center;
-    }
-
 }
+
 
 

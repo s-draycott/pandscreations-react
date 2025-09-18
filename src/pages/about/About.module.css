@@ -5,7 +5,7 @@
   src: url("/assets/fonts/Handwriting1-Regular.ttf") format("truetype");
 }
 .aboutContainer {
-  margin: 4% 10% 4% 10%;
+  margin: 4% 20% 4% 20%;
   padding: 20px;
 }
 .aboutContainer::after {
@@ -40,10 +40,10 @@
 
 .aboutText {
   font-family: "Cormorant", serif;
-  font-size: 1rem;
+  font-size: 1.3rem;
   line-height: 2;
   text-align: center;
-  margin: auto 100px;
+  margin: auto;
 }
 .aboutText.sawmillText {
   background-color: white;
@@ -85,24 +85,25 @@
   overflow: hidden;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .aboutContainer.one,
   .aboutContainer.two,
   .aboutContainer.three {
     display: flex;
     flex-direction: column-reverse;
-    margin: 0;
+    margin: 30px;
     padding: 0px;
   }
   .carouselContainerOne,
   .carouselContainerTwo {
     margin: 0;
     float: none;
-    width: 100%;
+    width: 50%;
+    align-self: center;
   }
   .aboutText {
     text-align: center;
-    font-size: 1rem;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
     line-height: 1.8;
     margin: 0px auto;
     padding: 30px;
@@ -113,7 +114,7 @@
     width: 100%;
     transform: none;
     padding: 40px 20px;
-    font-size: 1.2rem;
+    font-size: clamp(1.5rem, 5.5vw, 2rem);
     background-color: rgb(226, 197, 174);
     border-radius: 0px;
     margin: 0px;

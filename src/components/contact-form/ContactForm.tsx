@@ -1,4 +1,6 @@
-import styles from './ContactForm.module.css';
+import Btn from '../button/Button';
+
+import styles from './ContactForm.module.scss';
 
 const ContactForm = () => {
     return (
@@ -34,11 +36,11 @@ const ContactForm = () => {
                         placeholder="Your Message"
                         required
                     ></textarea>
-                    {/* Honeypot for spam protection */}
+                    {/* Honeypot for spam protection - hidden input field for bots */}
                     <input type="hidden" name="_gotcha" style={{ display: 'none' }} />
-                    <button className={styles.formBtn} type="submit">
+                    <Btn type="submit" variant="primary">
                         SEND
-                    </button>
+                    </Btn>
                 </form>
             </div>
         </>

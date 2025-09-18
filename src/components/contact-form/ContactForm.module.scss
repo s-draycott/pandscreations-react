@@ -1,20 +1,20 @@
-@import "../../stylesheets/Variables.scss";
+@use "../../stylesheets/Variables.scss" as vars;
 
 .heading {
-    font-family: $headingFont;
+    font-family: vars.$headingFont;
     font-size: 3rem;
     font-weight: 400;
     letter-spacing: 0.2rem;
 }
 
 .para {
-    font-family: $headingFont;
+    font-family: vars.$headingFont;
     font-size: 1.2rem;
     width: 50%;
     text-align: center;
     line-height: 2rem;
 
-    @media(max-width: $tablet) {
+    @media(max-width: vars.$tablet) {
         width: 90%;
     }
 }
@@ -25,7 +25,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    background-color: $whiteColor;
+    background-color: vars.$whiteColor;
     margin: 40px 0 40px 0;
     padding: 40px;
 }
@@ -44,28 +44,11 @@
     font-size: 1.2rem;;
     padding: 10px;
     border: none;
-    font-family: $headingFont;
+    font-family: vars.$headingFont;
     box-shadow: 1px 1px 5px rgb(221, 215, 205);
-    border: 1px solid $brownColorLight;
+    border: 1px solid vars.$brownColorLight;
 
-    @media(max-width: $tablet) {
+    @media(max-width: vars.$tablet) {
        width: 100%;
-    }
-}
-
-.formBtn {
-    font-family: $headingFont;
-    font-weight: 700;
-    letter-spacing: 5px;
-    color: $whiteColor;
-    background-color: $brownColor;
-    border-radius: 60px;
-    padding: 10px 20px 10px 20px;
-    box-shadow: none;
-    border: none;
-    transition: 0.3s ease-in-out;
-
-    &:hover {
-        transform: scale(1.08);
     }
 }

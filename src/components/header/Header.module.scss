@@ -1,4 +1,6 @@
-@import "../../stylesheets/Variables.scss";
+@use "../../stylesheets/Variables.scss" as vars;
+@use "sass:color";
+
 
 .offerBanner {
     width: 100%;
@@ -9,40 +11,40 @@
     justify-content: center;
     position: sticky;
     top: 0px;
-    background-color: $brownColor;
+    background-color: vars.$brownColor;
     height: auto;
     width: 100%;
     z-index: 10;
     transition: opacity 1s ease, transform 0.4s ease, background-color 0.5s ease, box-shadow 0.3s ease;
     flex-wrap: wrap;
 
-    @media (max-width: $tablet) {
+    @media (max-width: vars.$tablet) {
         height: 140px;
     }
 
     &.homePage {
-        background-color: $brownColorTranslucent;
+        background-color: vars.$brownColorTranslucent;
 
         &.scrolled {
-            background-color: $brownColor;
+            background-color: vars.$brownColor;
         }
 
-        @media (max-width: $tablet) {
-            background-color: $brownColor;
+        @media (max-width: vars.$tablet) {
+            background-color: vars.$brownColor;
         }
     }
 
     &.homePage:hover {
-        background-color: $brownColor;
+        background-color: vars.$brownColor;
     }
 
     &.scrolled {
-        background-color: $brownColor;
+        background-color: vars.$brownColor;
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
     }
 
     &.scrolled:hover {
-        background-color: $brownColor;
+        background-color: vars.$brownColor;
     }
 
     &.visible {
@@ -59,7 +61,7 @@
 .navContainer {
     display: grid;
     justify-items: center;
-    @media (max-width: $tablet) {
+    @media (max-width: vars.$tablet) {
         flex-direction: column;
         align-items: center;
     }
@@ -74,7 +76,7 @@
     list-style: none;
     transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.3s ease;
 
-    @media (max-width: $tablet) {
+    @media (max-width: vars.$tablet) {
         opacity: 0;
         visibility: hidden;
         display: flex;
@@ -87,36 +89,36 @@
 }
 
 .navMenu.open {
-    @media (max-width: $tablet) {
+    @media (max-width: vars.$tablet) {
         opacity: 1;
         visibility: visible;
-        background-color: $brownColor;     
+        background-color: vars.$brownColor;     
     }
 }
 
 .navBtn {
-    color: $whiteColor;
+    color: vars.$whiteColor;
     text-decoration: none;
     letter-spacing: 2px;
-    font-family: $headingFont;
+    font-family: vars.$headingFont;
     font-size: clamp(0.7rem, 1vw, 1.2rem);
     padding: 5px;
     position: relative;
     display: inline-block;
 
-    @media (max-width: $tablet) {
+    @media (max-width: vars.$tablet) {
         width: 100vw;
         text-align: center; 
         padding: 15px 0; 
         display: block; 
 
         &:active {
-            background-color: darken($brownColor, 10%);
+            background-color: color.scale(vars.$brownColor, $lightness: -10%);
             transform: scale(0.98);
         }
     }
 
-    @media (min-width: $tablet) {
+    @media (min-width: vars.$tablet) {
         &::after {
             content: "";
             position: absolute;
@@ -124,7 +126,7 @@
             left: 50%;
             width: 0;
             height: 2px;
-            background-color: $whiteColor;
+            background-color: vars.$whiteColor;
             transition: width 0.3s ease, left 0.3s ease;
         }
     
@@ -139,7 +141,7 @@
 #logoImg {
     width: 180px;
     padding: 10px;
-    @media (max-width: $tablet){
+    @media (max-width: vars.$tablet){
         width: 150px;
     }
 }
@@ -149,12 +151,12 @@
     font-size: 30px;
     background: none;
     border: none;
-    color: $whiteColor;
+    color: vars.$whiteColor;
     cursor: pointer;
     position: absolute;
     top: 60px;
     left: 20px;
-    @media (max-width: $tablet) {
+    @media (max-width: vars.$tablet) {
         display: block;
     }
 }
@@ -173,7 +175,7 @@
     position: absolute;
     top: 100%;
     left: -50px;
-    background-color: $brownColor;
+    background-color: vars.$brownColor;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     list-style: none;
     text-align: center;
@@ -187,7 +189,7 @@
         white-space: nowrap;
 
         a {
-            color: $whiteColor;
+            color: vars.$whiteColor;
             text-decoration: none;
             display: block;
         }

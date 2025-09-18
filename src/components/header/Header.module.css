@@ -112,7 +112,7 @@
     display: block;
   }
   .navBtn:active {
-    background-color: rgb(41.7391304348, 30.6086956522, 22.2608695652);
+    background-color: rgb(67.5, 49.5, 36);
     transform: scale(0.98);
   }
 }

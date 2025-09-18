@@ -4,7 +4,7 @@
   font-family: "Handwriting";
   src: url("/assets/fonts/Handwriting1-Regular.ttf") format("truetype");
 }
-.checkoutBtn {
+.btn {
   font-family: "Cormorant", serif;
   font-size: clamp(14px, 2.5vw, 18px);
   letter-spacing: 5px;
@@ -19,14 +19,14 @@
   transition: 0.3s ease-in-out;
   z-index: 2;
 }
-.checkoutBtn:hover {
+.btn:hover {
   transform: scale(1.08);
 }
-.checkoutBtn:focus, .checkoutBtn:active {
+.btn:focus, .btn:active {
   background-color: rgb(18.75, 13.75, 10);
 }
 @media (max-width: 768px) {
-  .checkoutBtn {
+  .btn {
     align-self: center;
   }
-}/*# sourceMappingURL=CheckoutButton.module.css.map */
+}/*# sourceMappingURL=Button.module.css.map */

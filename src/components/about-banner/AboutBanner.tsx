@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import Btn from '../button/Button';
 
 import styles from './AboutBanner.module.scss';
 type AboutBannerProps = {
@@ -22,16 +22,6 @@ const AboutBanner = ({
     moreBtnLink,
     poster,
 }: AboutBannerProps) => {
-    const navigate = useNavigate();
-
-    const handleMoreClick = () => {
-        if (moreBtnLink) {
-            navigate(moreBtnLink);
-        } else {
-            navigate('/about'); // default fallback route
-        }
-    };
-
     return (
         <div className={styles.aboutContainer}>
             <div className={styles.imgContainer}>
@@ -57,9 +47,9 @@ const AboutBanner = ({
                 <p className={styles.thankYou}>{thankYouMessage}</p>
 
                 {moreBtn && (
-                    <button onClick={handleMoreClick} className={styles.moreBtn}>
+                    <Btn to={moreBtnLink || '/about'} variant="primary">
                         {moreBtn}
-                    </button>
+                    </Btn>
                 )}
             </div>
         </div>

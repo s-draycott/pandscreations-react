@@ -82,18 +82,3 @@
     text-align: center;
 }
 
-.moreBtn {
-    font-family: vars.$headingFont;
-    letter-spacing: 5px;
-    color: vars.$whiteColor;
-    background-color: vars.$brownColor;
-    border-radius: 60px;
-    padding: 10px 30px 10px 30px;
-    box-shadow: none;
-    border: none;
-    transition: 0.3s ease-in-out;
-
-    &:hover {
-        transform: scale(1.08);
-    }
-}

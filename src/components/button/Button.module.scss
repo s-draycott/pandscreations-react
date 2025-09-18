@@ -1,6 +1,7 @@
 @use "../../stylesheets/Variables.scss" as vars;
 @use "sass:color";
-.checkoutBtn {
+
+.btn {
     font-family: vars.$headingFont;
     font-size: clamp(14px, 2.5vw, 18px);
     letter-spacing: 5px;
@@ -23,7 +24,7 @@
     &:active {
         background-color: color.scale(vars.$brownColor, $lightness: -75%);
     }
-
+    
     @media(max-width: vars.$tablet) {
         align-self: center;
     }

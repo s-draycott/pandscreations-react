@@ -57,20 +57,4 @@
   .formInput {
     width: 100%;
   }
-}
-
-.formBtn {
-  font-family: "Cormorant", serif;
-  font-weight: 700;
-  letter-spacing: 5px;
-  color: white;
-  background-color: rgb(75, 55, 40);
-  border-radius: 60px;
-  padding: 10px 20px 10px 20px;
-  box-shadow: none;
-  border: none;
-  transition: 0.3s ease-in-out;
-}
-.formBtn:hover {
-  transform: scale(1.08);
 }/*# sourceMappingURL=ContactForm.module.css.map */
