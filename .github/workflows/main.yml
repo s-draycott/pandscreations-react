@@ -1,0 +1,16 @@
+name: Supabase Keep Alive
+
+# Run once a day at 8:00 AM UTC
+on:
+  schedule:
+    - cron: '0 8 * * *'
+
+jobs:
+  keep-alive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase
+        run: |
+          curl -X POST https://ikratbwhngobpxbedpaj.supabase.co/auth/v1/token \
+          -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
+          -d "grant_type=refresh_token"
