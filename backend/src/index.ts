@@ -19,7 +19,7 @@ if (!supabaseUrl || !supabaseKey) {
 
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-const app = express();
+export const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Enable CORS for frontend
@@ -53,6 +53,30 @@ app.get('/api/images', async (_req, res) => {
   } catch (err) {
     console.error('Unexpected error:', err);
     res.status(500).json({ error: 'Failed to fetch images' });
+  }
+});
+
+// Fetch all site content
+app.get('/api/content', async (_req, res) => {
+  try {
+    const { data, error } = await supabase
+      .from('site_content')
+      .select('key, content');
+
+    if (error) {
+      console.error('Supabase error:', error);
+      return res.status(500).json({ error: 'Database query error' });
+    }
+
+    const contentMap = data.reduce((acc, item) => {
+      acc[item.key] = item.content;
+      return acc;
+    }, {} as Record<string, string>);
+
+    res.json(contentMap);
+  } catch (err) {
+    console.error('Unexpected error:', err);
+    res.status(500).json({ error: 'Failed to fetch content' });
   }
 });
 

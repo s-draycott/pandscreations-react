@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Palanquin&display=swap");
+@font-face {
+  font-family: "Handwriting";
+  src: url("/assets/fonts/Handwriting1-Regular.ttf") format("truetype");
+}
+.wrapper {
+  position: relative;
+  padding: 2rem;
+}
+
+.heading {
+  font-size: clamp(28px, 12vw, 60px);
+  font-family: "Cormorant", serif;
+  color: rgb(75, 55, 40);
+  letter-spacing: 0.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.scrollContainer {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 40px;
+  padding-bottom: 1rem;
+  margin: auto 60px;
+  scrollbar-width: none;
+}
+.scrollContainer::-webkit-scrollbar {
+  display: none;
+}
+.scrollContainer {
+  scroll-snap-type: x mandatory;
+}
+.scrollContainer > * {
+  scroll-snap-align: start;
+}
+
+.carouselWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 600px;
+}
+
+.arrowLeft,
+.arrowRight {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1;
+}
+
+.arrowLeft {
+  left: -1rem;
+}
+
+.arrowRight {
+  right: -1rem;
+}
+
+@media (max-width: 768px) {
+  .scrollContainer {
+    gap: 20px;
+    margin: 0px;
+    padding-bottom: 0.5rem;
+  }
+  .scrollContainer > * {
+    flex: 0 0 100%;
+  }
+  .carouselWrapper {
+    height: auto;
+  }
+  .arrowLeft,
+  .arrowRight {
+    display: none;
+  }
+}/*# sourceMappingURL=ProductScroll.module.css.map */

@@ -1,54 +1,52 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Current Project Structure
 
-Currently, two official plugins are available:
+pandscreations-react/  
+│  
+├─ **backend/** (backend server code (Node/Express + Typescript))  
+│ ├─ **src/** (app runs from here)  
+│ ├─ **tests/** (jest unit testing for backend functions)  
+│ ├─ **node_modules/** (backend specific dependencies)  
+│ ├─ **dist/** (compiled JS output from TS build)  
+│ ├─ **.env** (backend environment variables e.g. DB URLs, API keys etc.)
+│ ├─ **jest.config.js**  
+│ ├─ **package.json** (backend dependencies and scripts)  
+│ └─ **tsconfig.json** (backend TypeScript configuration)  
+│  
+├─ **frontend/**  
+│ ├─ **src/**  
+│ ├─ **public/** (static assets (images, favicon etc.))  
+│ ├─ **.env** (frontend environment variables)  
+│ ├─ **.env.local** (local environment variables overrides .env vars and not committed to git)  
+│ ├─ **index.html** (this is the main HTML template for Vite/React)  
+│ ├─ **package.json** (frontend dependencies and scripts)  
+│ ├─ **package-lock.json**  
+│ ├─ **tsconfig.app.json**  
+│ ├─ **tsconfig.json**  
+│ ├─ **tsconfig.node.json**  
+│ └─ **vite.config.ts** (vite config for frontend bundling/dev server)  
+│  
+├─ **.node_modules/** (root-level node modules)  
+├─ **.gitignore**  
+├─ **.prettierrc.json** (prettier code formatting rules)  
+├─ **eslint.config.js**  
+└─ **README.md**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
 
-## Expanding the ESLint configuration
+| Layer                | Technology                | Notes                                                                                                                                                                                                                            |
+| -------------------- | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Frontend             | React + TypeScript + Vite | Handles the user interface of the store: product pages, cart, checkout flow, navigation, etc. React manages components and UI state. TypeScript adds type safety. Vite provides a fast development server and build tool.        |
+| Backend              | Node/Express (Typescript) | Provides API endpoints for the frontend. Handles business logic such as creating orders, validating requests, communicating with Supabase and generating Stripe payment sessions                                                 |
+| Testing              | Jest (backend)            | Used to run unit tests and integration tests on backend code. Tests ensure functions behave correctly, APIs return expected responses, and bugs are caught early before deployment.                                              |
+| Database             | Supabase (free tier)      | Stores products, messages, gallery images, navigation menu                                                                                                                                                                       |
+| Storage              | AWS S3 buckets            | Stores product images and other media files. Supabase database only stores the image URLs, while the actual files live in S3. This keeps the database lightweight and scalable.                                                  |
+| Payments             | Stripe                    | Handles secure payment processing. Stripe manages credit card data, checkout flows, payment confirmation, refunds, and webhooks. Backend will create a Stripe checkout session and verify payment success.                       |
+| CI/Automation        | GitHub Actions            | Keep-alive for free-tier Supabase to stop pausing                                                                                                                                                                                |
+| Linting & Formatiing | ESLine + prettier         | Ensures consistent code style and catches potential bugs before runtime. ESLint analyzes the code for problems (unused variables, incorrect React hooks usage, etc.), while Prettier automatically formats code for consistency. |
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Running Locally
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+cd into frontend folder
+npm run dev
