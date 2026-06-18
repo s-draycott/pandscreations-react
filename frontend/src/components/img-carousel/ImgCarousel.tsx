@@ -14,23 +14,35 @@ interface ImgCarouselProps {
     customClass?: string;
 }
 
-const ImgCarousel: React.FC<ImgCarouselProps> = ({ data, autoSlide = true, customClass = '' }) => {
+const ImgCarousel: React.FC<ImgCarouselProps> = ({
+    data = [],
+    autoSlide = true,
+    customClass = '',
+}) => {
     const [slide, setSlide] = useState(0);
 
+    useEffect(() => {
+        setSlide(0);
+    }, [data.length]);
+
     const nextSlide = useCallback(() => {
-        setSlide((prevSlide) => (prevSlide + 1) % data.length);
+        if (!data.length) return;
+        setSlide((prev) => (prev + 1) % data.length);
     }, [data.length]);
 
     const prevSlide = () => {
-        setSlide((prevSlide) => (prevSlide - 1 + data.length) % data.length);
+        if (!data.length) return;
+        setSlide((prev) => (prev - 1 + data.length) % data.length);
     };
 
     useEffect(() => {
-        if (autoSlide) {
-            const intervalId = setInterval(nextSlide, 10000);
-            return () => clearInterval(intervalId);
-        }
+        if (!autoSlide || !data.length) return;
+
+        const id = setInterval(nextSlide, 10000);
+        return () => clearInterval(id);
     }, [autoSlide, data.length, nextSlide]);
+
+    if (!data.length) return null;
 
     return (
         <div className={styles.carousel}>

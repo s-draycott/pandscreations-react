@@ -1,9 +1,7 @@
 import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 
 type SiteContentMap = {
-    [key: string]: {
-        content: string;
-    };
+    [key: string]: string;
 };
 
 interface SiteContentContextType {
@@ -16,7 +14,7 @@ const SiteContentContext = createContext<SiteContentContextType>({
     loading: true,
 });
 
-export const SiteContextProvider = ({ children }: { children: ReactNode }) => {
+export const SiteContentProvider = ({ children }: { children: ReactNode }) => {
     const [content, setContent] = useState<SiteContentMap>({});
     const [loading, setLoading] = useState(true);
 
@@ -43,4 +41,4 @@ export const SiteContextProvider = ({ children }: { children: ReactNode }) => {
     );
 };
 
-export const useSiteImages = () => useContext(SiteContentContext);
+export const useSiteContent = () => useContext(SiteContentContext);

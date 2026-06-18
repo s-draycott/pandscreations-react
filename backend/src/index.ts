@@ -6,6 +6,10 @@ import Stripe from 'stripe';
 
 dotenv.config();
 
+type SiteImageValue =
+  | string
+  | { src: string; alt: string }[];
+
 const supabaseUrl = process.env.SUPABASE_URL || '';
 const supabaseKey = process.env.SUPABASE_ANON_KEY || '';
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
@@ -37,7 +41,7 @@ app.get('/api/images', async (_req, res) => {
   try {
     const { data, error } = await supabase
       .from('site_images')
-      .select('name, image_url');
+      .select('name, image_url, gallery_key');
 
     if (error) {
       console.error('Supabase error:', error);
@@ -49,12 +53,33 @@ app.get('/api/images', async (_req, res) => {
       return acc;
     }, {} as Record<string, string>);
 
-    res.json(imagesMap);
+
+    const galleries = data.reduce((acc, item) => {
+      if (!item.gallery_key) return acc;
+
+      if (!acc[item.gallery_key]) {
+        acc[item.gallery_key] = [];
+      }
+
+      acc[item.gallery_key].push({
+        src: item.image_url,
+        alt: item.name,
+      });
+
+      return acc;
+    }, {} as Record<string, { src: string; alt: string }[]>);
+
+    res.json({
+      images: imagesMap,
+      galleries,
+    });
+
   } catch (err) {
     console.error('Unexpected error:', err);
     res.status(500).json({ error: 'Failed to fetch images' });
   }
 });
+
 
 // Fetch all site content
 app.get('/api/content', async (_req, res) => {
