@@ -50,3 +50,7 @@ pandscreations-react/
 
 cd into frontend folder
 npm run dev
+
+## TODO
+
+- flesh out footer links and create pages/add routes
