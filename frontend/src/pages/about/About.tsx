@@ -4,20 +4,16 @@ import Header from '../../components/header/Header';
 import ImgCarousel from '../../components/img-carousel/ImgCarousel';
 import { useSiteImages } from '../../context/SiteImagesContext';
 import { useSiteContent } from '../../context/SiteContentContext';
-import { peteSallySlides, peteSolo, sallySolo } from '../../data/ImageCarouselData.json';
 
 import styles from './About.module.scss';
 
-const sawmillVideo = '/assets/sawmill-construction-video.mp4';
 const fallback = '/assets/sawmill.jpg';
 
 export default function About() {
     const { images, galleries } = useSiteImages();
-    const { content, loading: contentLoading } = useSiteContent();
-
+    const { content } = useSiteContent();
     const getContent = (key: string, fallback = '') => content[key] ?? fallback;
-    console.log('images:', images);
-    console.log('peteSallySlides', galleries['pete_sally_slides']);
+
     return (
         <div className="pageWrapper">
             <Header />
