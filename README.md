@@ -55,3 +55,4 @@ npm run dev
 
 - flesh out footer links and create pages/add routes
 - create coming soon page
+- sort out issue with product categories

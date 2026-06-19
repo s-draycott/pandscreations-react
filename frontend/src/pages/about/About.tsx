@@ -19,7 +19,7 @@ export default function About() {
             <Header />
             <div className="mainContent">
                 <AboutBanner
-                    mediaSrc={images['graduation']}
+                    mediaSrc={images['graduation']?.src}
                     mediaType="image"
                     heading={getContent('about_banner_heading')}
                     text={getContent('about_banner_para')}
@@ -35,7 +35,7 @@ export default function About() {
                 <div className={styles.quoteBanner}>
                     <img
                         className={styles.planerImg}
-                        src={images['planer_together']}
+                        src={images['planer_together']?.src}
                         alt="Planer"
                     />
                     <div className={styles.aboutQuote}>
@@ -58,7 +58,7 @@ export default function About() {
                     <p className={styles.aboutText}>{getContent('about_text_para3')}</p>
                 </div>
                 <AboutBanner
-                    mediaSrc={images['sawmill_construction_video']}
+                    mediaSrc={images['sawmill_construction_video']?.src}
                     mediaType="video"
                     heading=""
                     text={getContent('about_video_banner_para')}
