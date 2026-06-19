@@ -41,7 +41,7 @@ app.get('/api/images', async (_req, res) => {
   try {
     const { data, error } = await supabase
       .from('site_images')
-      .select('name, image_url, gallery_key');
+      .select('name, image_url, gallery_key, alt_text');
 
     if (error) {
       console.error('Supabase error:', error);
@@ -49,9 +49,15 @@ app.get('/api/images', async (_req, res) => {
     }
 
     const imagesMap = data.reduce((acc, item) => {
-      acc[item.name] = item.image_url;
+      acc[item.name] = {
+        src: item.image_url,
+        alt: item.alt_text
+      };
       return acc;
-    }, {} as Record<string, string>);
+    }, {} as Record<string, {
+      src: string;
+      alt: string;
+    }>);
 
 
     const galleries = data.reduce((acc, item) => {
@@ -63,7 +69,7 @@ app.get('/api/images', async (_req, res) => {
 
       acc[item.gallery_key].push({
         src: item.image_url,
-        alt: item.name,
+        alt: item.alt_text
       });
 
       return acc;
@@ -105,6 +111,33 @@ app.get('/api/content', async (_req, res) => {
   }
 });
 
+// Fetch site navigation
+app.get('/api/navigation', async (_req, res) => {
+  try {
+    const { data, error } = await supabase
+      .from('nav_menu')
+      .select('*')
+      .eq('visible', true)
+      .order('order', { ascending: true });
+
+    if (error) {
+      console.error('Supabase error:', error);
+      return res.status(500).json({ error: 'Database query error' });
+    }
+
+    const topLevel = data.filter(item => item.parent_id === null);
+
+    const navigation = topLevel.map(parent => ({
+    ...parent,
+    children: data.filter(child => child.parent_id === parent.id),
+    }));
+
+    res.json(navigation);
+  } catch (err) {
+    console.error('Unexpected error:', err);
+    res.status(500).json({ error: 'Failed to fetch navigation' });
+  }
+});
 
 // Additional routes can go here...
 

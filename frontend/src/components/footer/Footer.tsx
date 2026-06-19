@@ -10,11 +10,11 @@ const Footer = () => {
     return (
         <div className={styles.footerContainer}>
             <div className={styles.logoContainer}>
-                <a href="/home">
+                <a href={getContent('route_home')}>
                     <img
                         id={styles.logoImg}
-                        src={images['brown_logo_transparent']}
-                        alt="P&S Creations logo"
+                        src={images['brown_logo_transparent']?.src}
+                        alt={images['brown_logo_transparent']?.alt}
                     ></img>
                 </a>
                 <p className={styles.para}>{getContent('site_copyright')}</p>
@@ -23,27 +23,27 @@ const Footer = () => {
             <div className={styles.quickLinksContainer}>
                 <p className={styles.heading}>{getContent('footer_quick_links')}</p>
                 <p>
-                    <a href="/about" className={styles.para}>
+                    <a href={getContent('route_about')} className={styles.para}>
                         {getContent('footer_about')}
                     </a>
                 </p>
                 <p>
-                    <a href="/contact" className={styles.para}>
+                    <a href={getContent('route_contact')} className={styles.para}>
                         {getContent('footer_contact')}
                     </a>
                 </p>
                 <p>
-                    <a href="/terms" className={styles.para}>
+                    <a href={getContent('route_terms')} className={styles.para}>
                         {getContent('footer_terms')}
                     </a>
                 </p>
                 <p>
-                    <a href="/noPage" className={styles.para}>
+                    <a href={getContent('route_noPage')} className={styles.para}>
                         {getContent('footer_security_privacy')}
                     </a>
                 </p>
                 <p>
-                    <a href="/noPage" className={styles.para}>
+                    <a href={getContent('route_noPage')} className={styles.para}>
                         {getContent('footer_cookie_policy')}
                     </a>
                 </p>
@@ -58,9 +58,9 @@ const Footer = () => {
                         className={styles.socialLink}
                     >
                         <img
-                            src={images['instagram_icon_brown']}
+                            src={images['instagram_icon_brown']?.src}
                             className={styles.socialsLogo}
-                            alt="Instagram logo"
+                            alt={images['instagram_icon_brown']?.alt}
                         />
                         {getContent('footer_instagram')}
                     </a>
@@ -73,9 +73,9 @@ const Footer = () => {
                         className={styles.socialLink}
                     >
                         <img
-                            src={images['facebook_icon_brown']}
+                            src={images['facebook_icon_brown']?.src}
                             className={styles.socialsLogo}
-                            alt="Facebook logo"
+                            alt={images['facebook_icon_brown']?.alt}
                         />
                         {getContent('footer_facebook')}
                     </a>
@@ -88,9 +88,9 @@ const Footer = () => {
                         className={styles.socialLink}
                     >
                         <img
-                            src={images['etsy_icon_brown']}
+                            src={images['etsy_icon_brown']?.src}
                             className={styles.socialsLogo}
-                            alt="Etsy logo"
+                            alt={images['etsy_icon_brown']?.alt}
                         />
                         {getContent('footer_etsy')}
                     </a>

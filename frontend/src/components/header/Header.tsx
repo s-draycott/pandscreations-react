@@ -2,12 +2,23 @@ import { useEffect, useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { useLocation, Link } from 'react-router-dom';
 import { useSiteImages } from '../../context/SiteImagesContext';
+import { useSiteContent } from '../../context/SiteContentContext';
+import { useSiteNavigation } from '../../context/SiteNavigationContext';
 
 import OfferBanner from '../offer-banner/OfferBanner';
 
 import styles from './Header.module.css';
 
 const Header = () => {
+    const { images } = useSiteImages();
+    const { content } = useSiteContent();
+    const getContent = (key: string, fallback = '') => content[key] ?? fallback;
+
+    const { navigation, loading } = useSiteNavigation();
+    if (loading) {
+        return null;
+    }
+
     const location = useLocation();
     const isHomePage = location.pathname === '/' || location.pathname === '/home';
 
@@ -21,9 +32,6 @@ const Header = () => {
 
     const [isNavbarVisible, setIsNavbarVisible] = useState(true);
     const [isScrolled, setIsScrolled] = useState(false);
-
-    const { images, loading } = useSiteImages();
-    const logo = images['logo_white_transparent'];
 
     useEffect(() => {
         let lastScrollY = window.scrollY;
@@ -52,7 +60,7 @@ const Header = () => {
                 }
             }
 
-            setIsScrolled(currentScrollY > 100); // still true after 100px
+            setIsScrolled(currentScrollY > 100);
             lastScrollY = currentScrollY;
         };
 
@@ -75,65 +83,35 @@ const Header = () => {
                 <button className={styles.hamburgerIcon} onClick={toggleMenu}>
                     {isMenuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
                 </button>
-                <Link to="/home">
-                    <img id={styles.logoImg} src={logo} alt="P&S Creations logo" />
-                </Link>
-                <ul className={`${styles.navMenu} ${isMenuOpen ? styles.open : ''}`}>
-                    <li>
-                        <Link className={styles.navBtn} to="/about">
-                            ABOUT
-                        </Link>
-                    </li>
-                    <li className={styles.dropdown}>
-                        <Link className={styles.navBtn} to="/gallery">
-                            GALLERY
-                        </Link>
-                        <ul className={styles.dropdownMenu}>
-                            <li>
-                                <Link className={styles.navBtn} to="/gallery/bespoke">
-                                    Bespoke Projects
-                                </Link>
-                            </li>
-                            <li>
-                                <Link className={styles.navBtn} to="/gallery/frames">
-                                    Photo Frames
-                                </Link>
-                            </li>
-                        </ul>
-                    </li>
 
-                    <li className={styles.dropdown}>
-                        <Link className={styles.navBtn} to="/products">
-                            PRODUCTS
-                        </Link>
-                        <ul className={styles.dropdownMenu}>
-                            <li>
-                                <Link className={styles.navBtn} to="/products">
-                                    All
-                                </Link>
-                            </li>
-                            <li>
-                                <Link className={styles.navBtn} to="/products/category/woodwork">
-                                    Woodwork
-                                </Link>
-                            </li>
-                            <li>
-                                <Link className={styles.navBtn} to="/products/category/artwork">
-                                    Artwork
-                                </Link>
-                            </li>
-                            <li>
-                                <Link className={styles.navBtn} to="/products/category/wedding">
-                                    Wedding Stationery
-                                </Link>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <Link className={styles.navBtn} to="/contact">
-                            CONTACT
-                        </Link>
-                    </li>
+                <Link to={getContent('route_home')}>
+                    <img
+                        id={styles.logoImg}
+                        src={images['logo_white_transparent']?.src}
+                        alt={images['logo_white_transparent']?.alt}
+                    />
+                </Link>
+
+                <ul className={`${styles.navMenu} ${isMenuOpen ? styles.open : ''}`}>
+                    {navigation.map((item) => (
+                        <li key={item.id} className={item.children?.length ? styles.dropdown : ''}>
+                            <Link className={styles.navBtn} to={item.path}>
+                                {item.name}
+                            </Link>
+
+                            {(item.children?.length ?? 0) > 0 && (
+                                <ul className={styles.dropdownMenu}>
+                                    {item.children?.map((child) => (
+                                        <li key={child.id}>
+                                            <Link className={styles.navBtn} to={child.path}>
+                                                {child.name}
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
+                        </li>
+                    ))}
                 </ul>
             </div>
         </div>

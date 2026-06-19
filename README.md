@@ -54,3 +54,4 @@ npm run dev
 ## TODO
 
 - flesh out footer links and create pages/add routes
+- create coming soon page

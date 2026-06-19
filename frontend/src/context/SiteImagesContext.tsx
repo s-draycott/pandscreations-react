@@ -1,6 +1,11 @@
 import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 
-type SiteImagesMap = Record<string, string>;
+type SiteImage = {
+    src: string;
+    alt: string;
+};
+
+type SiteImagesMap = Record<string, SiteImage>;
 
 type GalleryImage = {
     src: string;
