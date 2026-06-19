@@ -151,7 +151,73 @@
   }
 }
 
+.mobileMenu {
+  display: none;
+}
+
 @media (max-width: 768px) {
+  .navMenu {
+    display: none;
+  }
+  .mobileMenu {
+    display: block;
+    position: fixed;
+    overflow: hidden;
+    background: rgb(75, 55, 40);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+  .mobileMenu.open {
+    height: 100vh;
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+  }
+  .mobileMenuTrack {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+  }
+  .mobileMenuPanel {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+  }
+  .mobileMenuPanel ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .mobileMenu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .mobileMenu li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .mobileMenuButton,
+  .mobileMenuLink,
+  .backButton {
+    font-family: "Cormorant", serif;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border: none;
+    background: none;
+    color: white;
+    text-decoration: none;
+  }
+  .mobileMenuButton.active,
+  .mobileMenuLink.active {
+    background-color: rgba(0, 0, 0, 0.25);
+  }
   .navbar.homePage {
     background-color: rgb(75, 55, 40);
   }
@@ -160,43 +226,5 @@
     flex-direction: column;
     align-items: center;
     background-color: rgb(75, 55, 40);
-  }
-  .navMenu {
-    position: fixed;
-    top: 100px;
-    left: -100%;
-    height: 100%;
-    padding: 4rem 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    transition: left 0.3s ease-in-out;
-    z-index: 15;
-  }
-  .navMenu ul {
-    flex-direction: column;
-    gap: 1rem;
-    width: 80vw;
-  }
-  .navMenu ul li .dropdownMenu {
-    display: flex !important;
-    flex-direction: column;
-    position: static;
-    padding: 0;
-  }
-  .navMenu ul li .dropdownMenu li {
-    padding: 0;
-  }
-  .navMenu.open {
-    left: 0;
-  }
-  .navBtn {
-    width: 100vw;
-    text-align: left;
-    display: block;
-    background-color: rgb(75, 55, 40);
-  }
-  #logoImg {
-    width: 150px;
   }
 }/*# sourceMappingURL=Header.module.css.map */

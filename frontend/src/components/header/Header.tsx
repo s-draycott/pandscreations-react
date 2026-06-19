@@ -9,6 +9,14 @@ import OfferBanner from '../offer-banner/OfferBanner';
 
 import styles from './Header.module.css';
 
+type NavItem = {
+    id: number;
+    name: string;
+    path: string;
+    visible?: boolean;
+    children?: NavItem[];
+};
+
 const Header = () => {
     const { images } = useSiteImages();
     const { content } = useSiteContent();
@@ -23,15 +31,50 @@ const Header = () => {
     const isHomePage = location.pathname === '/' || location.pathname === '/home';
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [menuStack, setMenuStack] = useState<NavItem[][]>([]);
+    const [activeItemId, setActiveItemId] = useState<number | null>(null);
+    const isActive = (path: string) => {
+        return location.pathname === path;
+    };
+
+    const resetMenu = () => {
+        setMenuStack([navigation]); // back to root
+    };
 
     const toggleMenu = () => {
-        setIsMenuOpen((prev) => !prev);
+        setIsMenuOpen((prev) => {
+            const next = !prev;
+
+            if (!next) {
+                resetMenu(); // 👈 reset when closing
+            }
+
+            return next;
+        });
     };
 
     // State to track scroll position and direction
 
     const [isNavbarVisible, setIsNavbarVisible] = useState(true);
     const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        if (navigation.length) {
+            setMenuStack([navigation]);
+        }
+    }, [navigation]);
+
+    const handleDrillDown = (item: NavItem) => {
+        if ((item.children?.length ?? 0) > 0) {
+            setActiveItemId(item.id);
+            setMenuStack((prev) => [...prev, item.children!]);
+        }
+    };
+
+    const handleBack = () => {
+        setMenuStack((prev) => prev.slice(0, -1));
+        setActiveItemId(null);
+    };
 
     useEffect(() => {
         let lastScrollY = window.scrollY;
@@ -113,6 +156,62 @@ const Header = () => {
                         </li>
                     ))}
                 </ul>
+
+                <nav className={`${styles.mobileMenu} ${isMenuOpen ? styles.open : ''}`}>
+                    <div
+                        className={styles.mobileMenuTrack}
+                        style={{
+                            transform: `translateX(-${(menuStack.length - 1) * 100}%)`,
+                        }}
+                    >
+                        {menuStack.map((menu, level) => (
+                            <div key={level} className={styles.mobileMenuPanel}>
+                                <ul>
+                                    {level > 0 && (
+                                        <li>
+                                            <button
+                                                className={styles.backButton}
+                                                onClick={handleBack}
+                                            >
+                                                ← Back
+                                            </button>
+                                        </li>
+                                    )}
+
+                                    {menu.map((item) => (
+                                        <li key={item.id}>
+                                            {(item.children?.length ?? 0) > 0 ? (
+                                                <button
+                                                    className={`${styles.mobileMenuButton} ${
+                                                        activeItemId === item.id
+                                                            ? styles.active
+                                                            : ''
+                                                    } ${isActive(item.path) ? styles.active : ''}`}
+                                                    onClick={() => handleDrillDown(item)}
+                                                >
+                                                    <span>{item.name}</span>
+                                                    <span>›</span>
+                                                </button>
+                                            ) : (
+                                                <Link
+                                                    className={`${styles.mobileMenuLink} ${
+                                                        activeItemId === item.id
+                                                            ? styles.active
+                                                            : ''
+                                                    } ${isActive(item.path) ? styles.active : ''}`}
+                                                    to={item.path}
+                                                    onClick={() => setIsMenuOpen(false)}
+                                                >
+                                                    {item.name}
+                                                </Link>
+                                            )}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
+                    </div>
+                </nav>
             </div>
         </div>
     );
