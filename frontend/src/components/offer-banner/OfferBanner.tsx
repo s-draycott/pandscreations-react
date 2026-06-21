@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useSiteContent } from '../../context/SiteContentContext';
 
 import { supabase } from '../../supabase/supabaseClient';
 import type { Offer } from '../../types/offer';
@@ -7,6 +8,8 @@ import styles from './OfferBanner.module.css';
 
 const OfferBanner = () => {
     const [offer, setOffer] = useState<Offer[] | null>(null);
+    const { content } = useSiteContent();
+    const getContent = (key: string, fallback = '') => content[key] ?? fallback;
 
     useEffect(() => {
         // Fetch active offers that are currently valid (within start and end date)
@@ -36,7 +39,7 @@ const OfferBanner = () => {
     if (!offer || offer.length === 0)
         return (
             <div className={styles.offerBanner}>
-                <p>WELCOME! Discover our latest products and enjoy exclusive deals coming soon!</p>
+                <p>{getContent('site_offer_default')}</p>
             </div>
         );
 
