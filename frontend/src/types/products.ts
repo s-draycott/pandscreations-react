@@ -18,5 +18,13 @@ export interface Product {
   description: string;
   price: number;
   available: boolean;
-  images: ProductImage[];
+  slug: string;
+  product_images?: ProductImage[];
+}
+
+export interface ProductImage {
+    id: string;
+    src: string;
+    alt: string;
+    sort_order?: number;
 }

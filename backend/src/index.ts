@@ -139,6 +139,37 @@ app.get('/api/navigation', async (_req, res) => {
   }
 });
 
+// Fetch site product data
+app.get('/api/products', async (_req, res) => {
+  try {
+    const { data, error } = await supabase
+      .from('products')
+      .select(`
+        *,
+        product_images (
+          id,
+          src,
+          alt,
+          sort_order
+        )
+      `);
+
+    if (error) {
+      console.error('Supabase error:', error);
+      return res.status(500).json({
+        error: 'Database query error',
+      });
+    }
+
+    res.json(data);
+  } catch (err) {
+    console.error('Unexpected error:', err);
+    res.status(500).json({
+      error: 'Failed to fetch products',
+    });
+  }
+});
+
 // Additional routes can go here...
 
 // Simple test route

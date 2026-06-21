@@ -5,15 +5,17 @@ import CheckoutButton from '../../components/checkout-button/CheckoutButton';
 import Footer from '../../components/footer/Footer';
 import Header from '../../components/header/Header';
 import ImgCarousel from '../../components/img-carousel/ImgCarousel';
-import products from '../../data/products.json';
-import { Product } from '../../types/products';
 import NoPage from '../NoPage';
+import { useProducts } from '../../context/ProductsContext';
 
 import styles from './ProductDetail.module.css';
 
 const ProductDetail = () => {
-    const { id } = useParams<{ id: string }>();
-    const product = (products as Product[]).find((p) => p.id === id);
+    const { products, loading } = useProducts();
+
+    const { slug } = useParams();
+
+    const product = products.find((p) => p.slug === slug);
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -26,12 +28,15 @@ const ProductDetail = () => {
             </p>
         );
 
-    const { images } = product;
+    const carouselData =
+        product.product_images?.map((img) => ({
+            src: img.src,
+            alt: img.alt,
+        })) ?? [];
 
-    const carouselData = images.map((img) => ({
-        src: img.src,
-        alt: img.alt,
-    }));
+    if (loading) {
+        return <div>Loading...</div>;
+    }
 
     return (
         <div className="pageWrapper">

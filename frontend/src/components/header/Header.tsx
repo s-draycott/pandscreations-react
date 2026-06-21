@@ -20,19 +20,19 @@ type NavItem = {
 const Header = () => {
     const { images } = useSiteImages();
     const { content } = useSiteContent();
-    const getContent = (key: string, fallback = '') => content[key] ?? fallback;
-
-    const { navigation, loading } = useSiteNavigation();
-    if (loading) {
-        return null;
-    }
-
     const location = useLocation();
-    const isHomePage = location.pathname === '/' || location.pathname === '/home';
-
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [menuStack, setMenuStack] = useState<NavItem[][]>([]);
     const [activeItemId, setActiveItemId] = useState<number | null>(null);
+    const [isNavbarVisible, setIsNavbarVisible] = useState(true);
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    const { navigation, loading } = useSiteNavigation();
+
+    const getContent = (key: string, fallback = '') => content[key] ?? fallback;
+
+    const isHomePage = location.pathname === '/' || location.pathname === '/home';
+
     const isActive = (path: string) => {
         return location.pathname === path;
     };
@@ -52,11 +52,6 @@ const Header = () => {
             return next;
         });
     };
-
-    // State to track scroll position and direction
-
-    const [isNavbarVisible, setIsNavbarVisible] = useState(true);
-    const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
         if (navigation.length) {
@@ -110,6 +105,10 @@ const Header = () => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    if (loading) {
+        return null;
+    }
 
     return (
         <div

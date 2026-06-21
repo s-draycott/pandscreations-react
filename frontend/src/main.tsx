@@ -6,15 +6,18 @@ import App from './App.tsx';
 import { SiteImagesProvider } from './context/SiteImagesContext';
 import { SiteContentProvider } from './context/SiteContentContext';
 import { SiteNavigationProvider } from './context/SiteNavigationContext';
+import { ProductsProvider } from './context/ProductsContext.tsx';
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
-        <SiteContentProvider>
-            <SiteImagesProvider>
+        <SiteImagesProvider>
+            <SiteContentProvider>
                 <SiteNavigationProvider>
-                    <App />
+                    <ProductsProvider>
+                        <App />
+                    </ProductsProvider>
                 </SiteNavigationProvider>
-            </SiteImagesProvider>
-        </SiteContentProvider>
+            </SiteContentProvider>
+        </SiteImagesProvider>
     </StrictMode>
 );

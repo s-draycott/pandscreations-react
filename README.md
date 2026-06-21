@@ -53,7 +53,9 @@ npm run dev
 
 ## TODO
 
-- flesh out footer links and create pages/add routes
+- PICK UP - fixing product scroll/product card extracting logic to supabase
+- extract all types for contexts etc. to types folder
+- flesh out footer links and create pages/add routes for terms etc
 - create coming soon page
 - sort out issue with product categories
-- possible delete nav menu componenet
+- possible delete nav menu component DONE

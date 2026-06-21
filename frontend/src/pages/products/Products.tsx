@@ -4,25 +4,26 @@ import { useParams } from 'react-router-dom';
 import Footer from '../../components/footer/Footer';
 import Header from '../../components/header/Header';
 import ProductCard from '../../components/product-card/ProductCard';
-import productsData from '../../data/products.json';
 import { Product } from '../../types/products';
+import { useProducts } from '../../context/ProductsContext';
 
 import styles from './Products.module.css';
 
 export default function Products() {
     const { category } = useParams();
-    const [filteredProducts, setFilteredProducts] = useState<Product[]>(productsData);
+    const { products, loading } = useProducts();
+    const [filteredProducts, setFilteredProducts] = useState<Product[]>(products);
 
     useEffect(() => {
-        console.log('Category from URL:', category);
         if (category) {
-            const filtered = productsData.filter((product) => product.category === category);
-            console.log('Filtered Products:', filtered);
+            const filtered = products.filter((product) =>
+                product.category?.includes(category.toUpperCase())
+            );
             setFilteredProducts(filtered);
         } else {
-            setFilteredProducts(productsData);
+            setFilteredProducts(products);
         }
-    }, [category]);
+    }, [category, products]);
 
     const handleProductClick = () => {
         sessionStorage.setItem('scrollPos', window.scrollY.toString());

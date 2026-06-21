@@ -1,21 +1,27 @@
 import { useRef } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
-import products from '../../data/products.json';
+// import products from '../../data/products.json';
 import { Product } from '../../types/products';
 import ProductCard from '../product-card/ProductCard';
+import { useProducts } from '../../context/ProductsContext';
 
 import styles from './ProductScroll.module.scss';
 
 const ProductScroll: React.FC = () => {
+    const { products, loading } = useProducts();
+    const scrollRef = useRef<HTMLDivElement>(null);
+
+    if (loading) {
+        return null;
+    }
+
     const availableProducts = (products as Product[]).filter((p) => p.available);
 
     const handleCardClick = (id: string) => {
         sessionStorage.setItem('scrollY', window.scrollY.toString());
         console.log(`Product ${id} clicked`);
     };
-
-    const scrollRef = useRef<HTMLDivElement>(null);
 
     const scroll = (direction: 'left' | 'right') => {
         if (!scrollRef.current) return;

@@ -10,10 +10,10 @@ interface ProductCardProps {
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ product, onClick }) => {
-    const { title, price, available, images } = product;
+    const { title, price, available, product_images } = product;
 
     // Find the image with id '1' (the first image)
-    const firstImage = images.find((img) => img.id === '1');
+    const firstImage = product_images?.[0];
 
     // If no image with id '1' is found, fallback (optional)
     if (!firstImage) {
@@ -25,9 +25,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onClick }) => {
     return (
         <div className={styles.productCard}>
             <Link
-                to={`/products/${product.id}`} // Navigate to product detail page
+                to={`/products/${product.slug}`} // Navigate to product detail page
                 className={styles.productLink}
-                onClick={() => onClick(product.id)} // Optionally save scroll position
+                onClick={() => onClick(product.slug)} // Optionally save scroll position
             >
                 <div className={styles.imgContainer}>
                     <img src={firstImage.src} alt={firstImage.alt} className={styles.productImg} />
